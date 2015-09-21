@@ -35,7 +35,9 @@ bower.json
 # Ignore pow environment settings
 .powenv
 
+# Emacs
 # From https://raw.githubusercontent.com/github/gitignore/master/Global/Emacs.gitignore
+
 # -*- mode: gitignore; -*-
 *~
 \#*\#
@@ -68,3 +70,12 @@ tramp
 
 # cask packages
 .cask/
+
+# Vim
+# From: https://raw.githubusercontent.com/github/gitignore/master/Global/Vim.gitignore
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
