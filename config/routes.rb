@@ -4,6 +4,14 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#index'
+  get '/login', :to => 'pages#login'
+  
+  # This is where we send people to authenticate with OmniAuth.
+  get '/auth/azureactivedirectory', as: :sign_in
+
+  # This is where we are redirected if OmniAuth successfully authenicates
+  # the user.
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

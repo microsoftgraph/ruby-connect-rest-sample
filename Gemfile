@@ -43,3 +43,8 @@ group :development, :test do
   gem 'spring'
 end
 
+# AzureAD specific strategy for OmniAuth.
+gem 'omniauth-azure-activedirectory'
+
+# Acquires access tokens for resources.
+gem 'adal'
