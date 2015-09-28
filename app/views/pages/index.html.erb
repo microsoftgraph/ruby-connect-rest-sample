@@ -1,9 +1,3 @@
-<script type="text/javascript">
-function login() {
-    // TODO fixme - remove hbs syntax
-	window.location = '{{auth_url}}'.replace(/&amp;/g, '&');
-}
-</script>
 <div class="ms-Grid">
 	<div class="ms-Grid-row">
 		<!-- App navigation bar markup. -->
@@ -17,7 +11,7 @@ function login() {
 		<div class="ms-Grid-col ms-u-mdPush1 ms-u-md9 ms-u-lgPush1 ms-u-lg6">
 			<div>
 				<p class="ms-font-xl">Use the button below to connect to Office 365.</p>
-				<button class="ms-Button" onclick="login()">
+				<button class="ms-Button" onclick="window.location.href = '/login'">
 					<span class="ms-Button-label">Connect to Office 365</span>
 				</button>
 			</div>
