@@ -12,5 +12,7 @@ class PagesController < ApplicationController
     # Authentication redirects here
     code = params[:code]
     puts "Code: #{code}"
+    
+    # So, do I need to request an access token, or can ADAL?
   end
 end
