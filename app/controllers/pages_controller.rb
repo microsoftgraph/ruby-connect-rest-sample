@@ -6,9 +6,6 @@ class PagesController < ApplicationController
   CLIENT_CRED = ADAL::ClientCredential.new(ENV['CLIENT_ID'], ENV['CLIENT_SECRET'])
   GRAPH_RESOURCE = 'https://graph.microsoft.com'
   
-  # TODO can I dynamically get the host + port?
-  REPLY_URL = 'http://localhost:9292/auth/azureactivedirectory/callback';
-  
   def login
     redirect_to "/auth/azureactivedirectory"
   end
@@ -22,7 +19,7 @@ class PagesController < ApplicationController
     @email = auth_hash.info.email
     
     # Request an access token
-    result = acquire_auth_token(code, REPLY_URL)
+    result = acquire_auth_token(code, ENV['REPLY_URL'])
     
     # Associate this token to our user's session
     session[:access_token] = result.access_token
