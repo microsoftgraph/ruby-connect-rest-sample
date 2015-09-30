@@ -8,9 +8,6 @@ class PagesController < ApplicationController
   
   # TODO can I dynamically get the host + port?
   REPLY_URL = 'http://localhost:9292/auth/azureactivedirectory/callback';
-
-  def index
-  end
   
   def login
     redirect_to "/auth/azureactivedirectory"
@@ -50,6 +47,8 @@ class PagesController < ApplicationController
     @recipient = params[:specified_email]
     
     # TODO send the email...
+    # check the status code and if in the success range AKA (200-299) we're good
+    # otherwise report an error...
     
     render "authd"
   end
@@ -59,7 +58,7 @@ class PagesController < ApplicationController
   end
   
   def acquire_auth_token(auth_code, reply_url)
-  AUTH_CTX.acquire_token_with_authorization_code(
+    AUTH_CTX.acquire_token_with_authorization_code(
                   auth_code,
                   reply_url,
                   CLIENT_CRED,
