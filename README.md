@@ -4,40 +4,7 @@
 
 Connecting to Office 365 is the first step every app must take to start working with Office 365 services and data. This sample shows how to connect and then call one API through the unified API (preview), and uses the Office Fabric UI to create an Office 365 experience.
 
-![Office 365 PHP Connect sample screenshot](/readme-images/O365-PHP-Unified-API-Connect.png)
-
-## Prerequisites
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# Office 365 PHP Connect sample using unified API (preview)
-
-[![Build Status](https://travis-ci.org/OfficeDev/O365-PHP-Unified-API-Connect.svg)](https://travis-ci.org/OfficeDev/O365-PHP-Unified-API-Connect)
-
-Connecting to Office 365 is the first step every app must take to start working with Office 365 services and data. This sample shows how to connect and then call one API through the unified API (preview), and uses the Office Fabric UI to create an Office 365 experience.
-
-![Office 365 PHP Connect sample screenshot](/readme-images/O365-PHP-Unified-API-Connect.png)
+![Office 365 Ruby Connect sample screenshot](/readme-images/O365-Ruby-Unified-API-Connect.png)
 
 ## Prerequisites
 
@@ -54,7 +21,7 @@ To use the Office 365 Ruby Connect sample, you need the following:
 
      > **Important:** <br />
      You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
-* A [```client ID```](app/Constants.php#L29), [```key```](app/Constants.rb#L30), and [```reply URL```](app/Constants.rb#L31) values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. For details see [Register your brower-based web app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-Android-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
+* A [```client ID```](app/Constants.rb#L29), [```key```](app/Constants.rb#L30), and [```reply URL```](app/Constants.rb#L31) values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. For details see [Register your brower-based web app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-Ruby-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Note:** <br />
      During the app registration process, make sure to specify *http://localhost:8080/login** as the **Sign-on URL**.
@@ -70,7 +37,7 @@ To use the Office 365 Ruby Connect sample, you need the following:
 
 ## Questions and comments
 
-We'd love to get your feedback about the Office 365 PHP Connect sample. You can send your questions and suggestions to us in the [Issues](https://github.com/OfficeDev/O365-Ruby-Unified-API-Connect/issues) section of this repository.
+We'd love to get your feedback about the Office 365 Ruby Connect sample. You can send your questions and suggestions to us in the [Issues](https://github.com/OfficeDev/O365-Ruby-Unified-API-Connect/issues) section of this repository.
 
 Questions about Office 365 development in general should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions or comments are tagged with [Office365] and [API].
   
