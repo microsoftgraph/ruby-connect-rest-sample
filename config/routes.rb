@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # This is where we are redirected if OmniAuth successfully authenicates
   # the user.
   match '/auth/:provider/callback', to: 'pages#authd', via: [:get, :post]
+  
+  match '/send_mail', to: 'pages#send_mail', via: [:post]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
