@@ -62,4 +62,11 @@ class PagesController < ApplicationController
                   GRAPH_RESOURCE)
   end
   
+  def disconnect
+    reset_session
+    redirect = "#{ENV['LOGOUT_ENDPOINT']}?post_logout_redirect_uri=#{ERB::Util.url_encode(root_url)}"
+    puts "REDIRECT: " + redirect
+    redirect_to redirect
+  end
+  
 end
