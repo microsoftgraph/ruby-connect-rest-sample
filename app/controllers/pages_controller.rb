@@ -42,6 +42,7 @@ class PagesController < ApplicationController
     @name = session[:name]
     @email = params[:specified_email]
     @recipient = params[:specified_email]
+    @mailSent = false
     
     sendMailEndpoint = URI("https://graph.microsoft.com/beta/me/sendmail")
     contentType = "application/json;odata.metadata=minimal;odata.streaming=true"
@@ -84,10 +85,17 @@ class PagesController < ApplicationController
     
     puts "Code: #{response.code}"
     puts "Message: #{response.message}"
-    # check the status code and if in the success range AKA (200-299) we're good
-    # otherwise report an error...
+
+    if response.code == "202"
+      #message was accepted
+      @mailSent = true
+    else
+      @mailSent = false
+      flash[:httpError] = "#{response.code} - #{response.message}"
+    end
     
     render "authd"
+    
   end
 
   def auth_hash

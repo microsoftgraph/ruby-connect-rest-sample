@@ -19,11 +19,13 @@
             <span class="ms-Button-label">Send mail</span>
             </button>
             
-            <%if @recipient %>
             <div>
+            <%if @mailSent %>
                <p class="ms-font-m ms-fontColor-green">Successfully sent an email to <%= @recipient %>!</p>
-            </div>
+            <% elsif !@mailSent && flash[:httpError] %>
+               <p class="ms-font-m ms-fontColor-redDark">Something went wrong, couldn't send an email (<%= flash[:httpError] %>).</p>
             <% end %>
+            </div>
             
             <div>
             </div>
