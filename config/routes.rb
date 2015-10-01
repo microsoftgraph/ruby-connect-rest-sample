@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   match '/auth/:provider/callback', to: 'pages#authd', via: [:get, :post]
   
   match '/send_mail', to: 'pages#send_mail', via: [:post]
+  
+  match '/disconnect', to: 'pages#disconnect', via: [:get]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

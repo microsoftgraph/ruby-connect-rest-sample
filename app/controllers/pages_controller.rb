@@ -62,4 +62,12 @@ class PagesController < ApplicationController
                   GRAPH_RESOURCE)
   end
   
+  def disconnect
+    reset_session
+    #TODO: Use interpolate instead of +?
+    redirect = "#{ENV['LOGOUT_ENDPOINT']}?post_logout_redirect_uri=http://localhost:9292"
+    puts "REDIRECT: " + redirect
+    redirect_to redirect
+  end
+  
 end

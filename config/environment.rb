@@ -6,6 +6,8 @@ ENV['TENANT'] = 'patsoldemo6.onmicrosoft.com'
 # TODO can I dynamically get the host + port?
 ENV['REPLY_URL'] = 'http://localhost:9292/auth/azureactivedirectory/callback'
 
+ENV['LOGOUT_ENDPOINT'] = 'https://login.microsoftonline.com/common/oauth2/logout'
+
 # Load the Rails application.
 require File.expand_path('../application', __FILE__)
 
