@@ -64,8 +64,7 @@ class PagesController < ApplicationController
   
   def disconnect
     reset_session
-    #TODO: Use interpolate instead of +?
-    redirect = "#{ENV['LOGOUT_ENDPOINT']}?post_logout_redirect_uri=http://localhost:9292"
+    redirect = "#{ENV['LOGOUT_ENDPOINT']}?post_logout_redirect_uri=#{ERB::Util.url_encode(root_url)}"
     puts "REDIRECT: " + redirect
     redirect_to redirect
   end
