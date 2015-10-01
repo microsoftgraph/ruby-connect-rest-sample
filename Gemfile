@@ -47,3 +47,6 @@ gem 'omniauth-azure-activedirectory'
 
 # Acquires access tokens for resources.
 gem 'adal'
+
+# On Windows systems we need tzinfo-data
+gem 'tzinfo-data'
