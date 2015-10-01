@@ -43,24 +43,28 @@ class PagesController < ApplicationController
     @email = params[:specified_email]
     @recipient = params[:specified_email]
     
-    # TODO send the email...
     sendMailEndpoint = URI("https://graph.microsoft.com/beta/me/sendmail")
-    puts "ENDPOINT: #{sendMailEndpoint}"
+    contentType = "application/json;odata.metadata=minimal;odata.streaming=true"
     http = Net::HTTP.new(sendMailEndpoint.host, sendMailEndpoint.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     
-    emailBody = "{
+    emailBody = File.read("app/assets/MailTemplate.html")
+    emailBody.sub! "{given_name}", @name
+    
+    puts emailBody
+    
+    emailMessage = "{
             Message: {
             Subject: 'Welcome to Office 365 development with Ruby',
             Body: {
                 ContentType: 'HTML',
-                Content: 'the body'
+                Content: '#{emailBody}'
             },
             ToRecipients: [
                 {
                     EmailAddress: {
-                        Address: '#{recipient}'
+                        Address: '#{@recipient}'
                     }
                 }
             ]
@@ -70,15 +74,16 @@ class PagesController < ApplicationController
 
     response = http.post(
       "/beta/me/sendmail", 
-      emailBody, 
+      emailMessage, 
       initheader = 
       {
         "Authorization" => "Bearer #{session[:access_token]}", 
-        "Content-Type" => "application/json;odata.metadata=minimal;odata.streaming=true"
+        "Content-Type" => contentType
       }
     )
-      puts "Code: #{response.code}"
-      puts "Message: #{response.message}"
+    
+    puts "Code: #{response.code}"
+    puts "Message: #{response.message}"
     # check the status code and if in the success range AKA (200-299) we're good
     # otherwise report an error...
     
