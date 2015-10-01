@@ -44,6 +44,41 @@ class PagesController < ApplicationController
     @recipient = params[:specified_email]
     
     # TODO send the email...
+    sendMailEndpoint = URI("https://graph.microsoft.com/beta/me/sendmail")
+    puts "ENDPOINT: #{sendMailEndpoint}"
+    http = Net::HTTP.new(sendMailEndpoint.host, sendMailEndpoint.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    
+    emailBody = "{
+            Message: {
+            Subject: 'Welcome to Office 365 development with Ruby',
+            Body: {
+                ContentType: 'HTML',
+                Content: 'the body'
+            },
+            ToRecipients: [
+                {
+                    EmailAddress: {
+                        Address: '#{recipient}'
+                    }
+                }
+            ]
+            },
+            SaveToSentItems: true
+            }"
+
+    response = http.post(
+      "/beta/me/sendmail", 
+      emailBody, 
+      initheader = 
+      {
+        "Authorization" => "Bearer #{session[:access_token]}", 
+        "Content-Type" => "application/json;odata.metadata=minimal;odata.streaming=true"
+      }
+    )
+      puts "Code: #{response.code}"
+      puts "Message: #{response.message}"
     # check the status code and if in the success range AKA (200-299) we're good
     # otherwise report an error...
     
