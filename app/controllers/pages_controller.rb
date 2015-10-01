@@ -6,12 +6,6 @@ class PagesController < ApplicationController
   CLIENT_CRED = ADAL::ClientCredential.new(ENV['CLIENT_ID'], ENV['CLIENT_SECRET'])
   GRAPH_RESOURCE = 'https://graph.microsoft.com'
   
-  # TODO can I dynamically get the host + port?
-  REPLY_URL = 'http://localhost:9292/auth/azureactivedirectory/callback';
-
-  def index
-  end
-  
   def login
     redirect_to "/auth/azureactivedirectory"
   end
@@ -25,7 +19,7 @@ class PagesController < ApplicationController
     @email = auth_hash.info.email
     
     # Request an access token
-    result = acquire_auth_token(code, REPLY_URL)
+    result = acquire_auth_token(code, ENV['REPLY_URL'])
     
     # Associate this token to our user's session
     session[:access_token] = result.access_token
@@ -50,6 +44,8 @@ class PagesController < ApplicationController
     @recipient = params[:specified_email]
     
     # TODO send the email...
+    # check the status code and if in the success range AKA (200-299) we're good
+    # otherwise report an error...
     
     render "authd"
   end
@@ -59,7 +55,7 @@ class PagesController < ApplicationController
   end
   
   def acquire_auth_token(auth_code, reply_url)
-  AUTH_CTX.acquire_token_with_authorization_code(
+    AUTH_CTX.acquire_token_with_authorization_code(
                   auth_code,
                   reply_url,
                   CLIENT_CRED,
