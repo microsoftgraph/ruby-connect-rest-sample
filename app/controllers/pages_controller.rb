@@ -42,12 +42,60 @@ class PagesController < ApplicationController
     @name = session[:name]
     @email = params[:specified_email]
     @recipient = params[:specified_email]
+    @mailSent = false
     
-    # TODO send the email...
-    # check the status code and if in the success range AKA (200-299) we're good
-    # otherwise report an error...
+    sendMailEndpoint = URI("https://graph.microsoft.com/beta/me/sendmail")
+    contentType = "application/json;odata.metadata=minimal;odata.streaming=true"
+    http = Net::HTTP.new(sendMailEndpoint.host, sendMailEndpoint.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    
+    emailBody = File.read("app/assets/MailTemplate.html")
+    emailBody.sub! "{given_name}", @name
+    
+    puts emailBody
+    
+    emailMessage = "{
+            Message: {
+            Subject: 'Welcome to Office 365 development with Ruby',
+            Body: {
+                ContentType: 'HTML',
+                Content: '#{emailBody}'
+            },
+            ToRecipients: [
+                {
+                    EmailAddress: {
+                        Address: '#{@recipient}'
+                    }
+                }
+            ]
+            },
+            SaveToSentItems: true
+            }"
+
+    response = http.post(
+      "/beta/me/sendmail", 
+      emailMessage, 
+      initheader = 
+      {
+        "Authorization" => "Bearer #{session[:access_token]}", 
+        "Content-Type" => contentType
+      }
+    )
+    
+    puts "Code: #{response.code}"
+    puts "Message: #{response.message}"
+
+    if response.code == "202"
+      #message was accepted
+      @mailSent = true
+    else
+      @mailSent = false
+      flash[:httpError] = "#{response.code} - #{response.message}"
+    end
     
     render "authd"
+    
   end
 
   def auth_hash
