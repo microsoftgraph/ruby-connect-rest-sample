@@ -26,16 +26,30 @@ To use the Office 365 Ruby Connect sample, you need the following:
 * A [```client ID```](app/Constants.rb#L29), [```key```](app/Constants.rb#L30), and [```reply URL```](app/Constants.rb#L31) values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. For details see [Register your brower-based web app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-Ruby-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Note:** <br />
-     During the app registration process, make sure to specify *http://localhost:8080/login** as the **Sign-on URL**.
+     During the app registration process, make sure to specify *http://localhost:9292/auth/azureactivedirectory/callback** as the **Sign-on URL**.
 
 ## Configure and run the app
 
-1. **Instructions/script to configure app**. 
-2. Using your favorite IDE, open **Constants.rb** in the *app* folder.
-3. Replace *{YOUR AZURE CLIENT ID HERE}* with the client ID of your registered Azure application.
-4. Replace *{YOUR AZURE KEY HERE}* with the client secret of your registered Azure application.
-5. Replace *{YOUR AZURE REPLY URL HERE}* with the reply URL of your registered Azure application. 
-6. Navigate to ```http://localhost:8080``` in your web browser.
+1. If you don't have bundler and rack already, you can install them with the following command.
+
+	```
+	gem install bundler rack
+	```
+2. In the [environment.rb](config/environment.rb) file do the following.
+	1. Replace *{YOUR AZURE CLIENT ID}* with the client ID of your registered Azure application.
+	2. Replace *{YOUR AZURE KEY}* with the key of your registered Azure application.
+	3. Replace *{YOUR AZURE REPLY URL}* with the reply URL of your registered Azure application. 
+3. Install the Rails application and dependencies with the following command.
+
+	```
+	bundle install
+	```
+4. To start the rails application, type the following command.
+
+	```
+	rackup
+	```
+5. Go to ```http://localhost:9292``` in your web browser.
 
 ## Questions and comments
 
