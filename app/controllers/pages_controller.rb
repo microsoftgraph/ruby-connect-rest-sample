@@ -15,7 +15,7 @@
     redirect_to "/auth/azureactivedirectory"
   end
   
-  def authd
+  def callback
     # Authentication redirects here
     code = params[:code]
     
@@ -37,7 +37,7 @@
     puts "Code: #{code}"
     puts "Name: #{@name}"
     puts "Email: #{@email}"
-    puts "[authd] - Access token: #{session[:access_token]}"
+    puts "[callback] - Access token: #{session[:access_token]}"
   end
   
   def send_mail
@@ -99,7 +99,7 @@
       flash[:httpError] = "#{response.code} - #{response.message}"
     end
     
-    render "authd"
+    render "callback"
     
   end
 
