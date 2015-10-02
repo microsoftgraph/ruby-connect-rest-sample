@@ -24,7 +24,7 @@
     @email = auth_hash.info.email
     
     # Request an access token
-    result = acquire_auth_token(code, ENV['REPLY_URL'])
+    result = acquire_access_token(code, ENV['REPLY_URL'])
     
     # Associate this token to our user's session
     session[:access_token] = result.access_token
@@ -40,6 +40,7 @@
     puts "[callback] - Access token: #{session[:access_token]}"
   end
   
+  def acquire_access_token(auth_code, reply_url)
   def send_mail
     puts "[send_mail] - Access token: #{session[:access_token]}"
     
@@ -107,7 +108,6 @@
     request.env['omniauth.auth']
   end
   
-  def acquire_auth_token(auth_code, reply_url)
     AUTH_CTX.acquire_token_with_authorization_code(
                   auth_code,
                   reply_url,
