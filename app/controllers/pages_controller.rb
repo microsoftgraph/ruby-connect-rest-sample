@@ -88,7 +88,7 @@ class PagesController < ApplicationController
     @name = session[:name]
     @email = params[:specified_email]
     @recipient = params[:specified_email]
-    @mailSent = false
+    @mail_sent = false
 
     send_mail_endpoint = URI("#{GRAPH_RESOURCE}#{SENDMAIL_ENDPOINT}")
     content_type = CONTENT_TYPE
@@ -138,9 +138,9 @@ class PagesController < ApplicationController
 
     # The send mail endpoint returns a 202 - Accepted code on success
     if response.code == '202'
-      @mailSent = true
+      @mail_sent = true
     else
-      @mailSent = false
+      @mail_sent = false
       flash[:httpError] = "#{response.code} - #{response.message}"
     end
 

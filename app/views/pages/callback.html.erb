@@ -25,9 +25,9 @@ Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. Se
             
             <!-- Result notification area -->
             <div>
-            <%if @mailSent %>
+            <%if @mail_sent %>
                <p class="ms-font-m ms-fontColor-green">Successfully sent an email to <%= @recipient %>!</p>
-            <% elsif !@mailSent && flash[:httpError] %>
+            <% elsif !@mail_sent && flash[:httpError] %>
                <p class="ms-font-m ms-fontColor-redDark">Something went wrong, couldn't send an email (<%= flash[:httpError] %>).</p>
             <% end %>
             </div>
