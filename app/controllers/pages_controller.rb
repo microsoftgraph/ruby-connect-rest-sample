@@ -90,9 +90,9 @@ class PagesController < ApplicationController
     @recipient = params[:specified_email]
     @mailSent = false
 
-    sendMailEndpoint = URI("#{GRAPH_RESOURCE}#{SENDMAIL_ENDPOINT}")
-    contentType = CONTENT_TYPE
-    http = Net::HTTP.new(sendMailEndpoint.host, sendMailEndpoint.port)
+    send_mail_endpoint = URI("#{GRAPH_RESOURCE}#{SENDMAIL_ENDPOINT}")
+    content_type = CONTENT_TYPE
+    http = Net::HTTP.new(send_mail_endpoint.host, send_mail_endpoint.port)
     http.use_ssl = true
 
     # If you want to use a sniffer tool, like Fiddler, to see the request
@@ -100,17 +100,17 @@ class PagesController < ApplicationController
     # certificate or you might see a "certificate verify failed" error
     # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-    emailBody = File.read('app/assets/MailTemplate.html')
-    emailBody.sub! '{given_name}', @name
+    email_body = File.read('app/assets/MailTemplate.html')
+    email_body.sub! '{given_name}', @name
 
-    puts emailBody
+    puts email_body
 
-    emailMessage = "{
+    email_message = "{
             Message: {
             Subject: 'Welcome to Office 365 development with Ruby',
             Body: {
                 ContentType: 'HTML',
-                Content: '#{emailBody}'
+                Content: '#{email_body}'
             },
             ToRecipients: [
                 {
@@ -125,11 +125,11 @@ class PagesController < ApplicationController
 
     response = http.post(
       SENDMAIL_ENDPOINT,
-      emailMessage,
+      email_message,
       initheader =
       {
         'Authorization' => "Bearer #{session[:access_token]}",
-        'Content-Type' => contentType
+        'Content-Type' => content_type
       }
     )
 
