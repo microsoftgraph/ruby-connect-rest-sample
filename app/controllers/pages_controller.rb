@@ -54,10 +54,10 @@ class PagesController < ApplicationController
     session[:email] = @email
 
     # Debug logging
-    puts "Code: #{code}"
-    puts "Name: #{@name}"
-    puts "Email: #{@email}"
-    puts "[callback] - Access token: #{session[:access_token]}"
+    logger.info "Code: #{code}"
+    logger.info "Name: #{@name}"
+    logger.info "Email: #{@email}"
+    logger.info "[callback] - Access token: #{session[:access_token]}"
   end
 
   # Gets access (and refresh) token using the Azure OmniAuth library
@@ -82,7 +82,7 @@ class PagesController < ApplicationController
   # - The access token must be appended to the authorization initheader
   # - Content type must be at least application/json
   def send_mail
-    puts "[send_mail] - Access token: #{session[:access_token]}"
+    logger.debug "[send_mail] - Access token: #{session[:access_token]}"
 
     # Used in the template
     @name = session[:name]
@@ -103,7 +103,7 @@ class PagesController < ApplicationController
     email_body = File.read('app/assets/MailTemplate.html')
     email_body.sub! '{given_name}', @name
 
-    puts email_body
+    logger.debug email_body
 
     email_message = "{
             Message: {
@@ -133,8 +133,8 @@ class PagesController < ApplicationController
       }
     )
 
-    puts "Code: #{response.code}"
-    puts "Message: #{response.message}"
+    logger.debug "Code: #{response.code}"
+    logger.debug "Message: #{response.message}"
 
     # The send mail endpoint returns a 202 - Accepted code on success
     if response.code == '202'
@@ -154,7 +154,7 @@ class PagesController < ApplicationController
   def disconnect
     reset_session
     redirect = "#{ENV['LOGOUT_ENDPOINT']}?post_logout_redirect_uri=#{ERB::Util.url_encode(root_url)}"
-    puts 'REDIRECT: ' + redirect
+    logger.info 'REDIRECT: ' + redirect
     redirect_to redirect
   end
 end
