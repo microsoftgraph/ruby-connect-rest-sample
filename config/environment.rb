@@ -5,13 +5,13 @@
 
 # The following values must match the client ID, key, and reply URL
 # in your Azure application.
-ENV['CLIENT_ID'] = '748ba382-f304-49f6-94d1-bfca33668f78'
-ENV['CLIENT_SECRET'] = 'RrMy6FTud+m9DgjRGhKN9kssm1zcjHlRrI6sMWxMez0='
-ENV['REPLY_URL'] = 'http://localhost:9292/auth/azureactivedirectory/callback'
+ENV['CLIENT_ID'] = '{YOUR AZURE CLIENT ID}'
+ENV['CLIENT_SECRET'] = '{YOUR AZURE KEY}'
+ENV['REPLY_URL'] = '{YOUR AZURE REPLY URL}'
 
 # This should be the domain of your test account
 # For example, contoso.onmicrosoft.com
-ENV['TENANT'] = 'patsoldemo6.onmicrosoft.com'
+ENV['TENANT'] = '{YOUR DOMAIN}'
 ENV['LOGOUT_ENDPOINT'] = 'https://login.microsoftonline.com/common/oauth2/logout'
 
 # Load the Rails application.
