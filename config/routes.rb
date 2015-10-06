@@ -1,27 +1,27 @@
 ###
- #  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
- #  See full license at the bottom of this file.
- ##
- 
- Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
+#  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+#  See full license at the bottom of this file.
+##
+
+Rails.application.routes.draw do
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'pages#index'
-  get '/login', :to => 'pages#login'
-  
+  get '/login', to: 'pages#login'
+
   # This is where we send people to authenticate with OmniAuth.
   get '/auth/azureactivedirectory', as: :sign_in
 
-  # This is where we are redirected if OmniAuth successfully authenicates
+  # This is where we are redirected if OmniAuth successfully authenticates
   # the user.
   match '/auth/:provider/callback', to: 'pages#callback', via: [:get, :post]
-  
-  match '/send_mail', to: 'pages#send_mail', via: [:post]
-  
-  match '/disconnect', to: 'pages#disconnect', via: [:get]
 
+  match '/send_mail', to: 'pages#send_mail', via: [:post]
+
+  match '/disconnect', to: 'pages#disconnect', via: [:get]
 end
 
 #############################################################

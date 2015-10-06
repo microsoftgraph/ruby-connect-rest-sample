@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - 'bin/**'
+
+Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Exclude:
+    - 'bin/rails'
+    - 'bin/rake'
