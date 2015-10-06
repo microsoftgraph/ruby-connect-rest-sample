@@ -153,7 +153,8 @@ class PagesController < ApplicationController
   # post_logout_redirect_uri, which happens to be our start screen
   def disconnect
     reset_session
-    redirect = "#{ENV['LOGOUT_ENDPOINT']}?post_logout_redirect_uri=#{ERB::Util.url_encode(root_url)}"
+    redirect = "#{ENV['LOGOUT_ENDPOINT']}"\
+               "?post_logout_redirect_uri=#{ERB::Util.url_encode(root_url)}"
     logger.info 'REDIRECT: ' + redirect
     redirect_to redirect
   end
