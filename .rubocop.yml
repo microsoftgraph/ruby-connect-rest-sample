@@ -3,3 +3,8 @@ Documentation:
 
 Metrics/MethodLength:
   Enabled: false
+
+Lint/HandleExceptions:
+  Exclude:
+    - 'bin/rails'
+    - 'bin/rake'

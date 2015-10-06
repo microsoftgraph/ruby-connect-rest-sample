@@ -126,11 +126,8 @@ class PagesController < ApplicationController
     response = http.post(
       SENDMAIL_ENDPOINT,
       email_message,
-      initheader =
-      {
-        'Authorization' => "Bearer #{session[:access_token]}",
-        'Content-Type' => content_type
-      }
+      'Authorization' => "Bearer #{session[:access_token]}",
+      'Content-Type' => content_type
     )
 
     logger.debug "Code: #{response.code}"
