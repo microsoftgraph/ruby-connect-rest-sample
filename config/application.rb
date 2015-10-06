@@ -1,9 +1,9 @@
 ###
- #  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
- #  See full license at the bottom of this file.
- ##
- 
- require File.expand_path('../boot', __FILE__)
+#  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+#  See full license at the bottom of this file.
+##
+
+require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 

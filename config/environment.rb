@@ -1,7 +1,7 @@
 ###
- #  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
- #  See full license at the bottom of this file.
- ##
+#  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+#  See full license at the bottom of this file.
+##
 
 # The following values must match the client ID, key, and reply URL
 # in your Azure application.
@@ -10,7 +10,7 @@ ENV['CLIENT_SECRET'] = 'RrMy6FTud+m9DgjRGhKN9kssm1zcjHlRrI6sMWxMez0='
 ENV['REPLY_URL'] = 'http://localhost:9292/auth/azureactivedirectory/callback'
 
 # This should be the domain of your test account
-# For example, contoso.onmicrosoft.com 
+# For example, contoso.onmicrosoft.com
 ENV['TENANT'] = 'patsoldemo6.onmicrosoft.com'
 ENV['LOGOUT_ENDPOINT'] = 'https://login.microsoftonline.com/common/oauth2/logout'
 
