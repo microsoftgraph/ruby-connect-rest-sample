@@ -20,7 +20,9 @@ class PagesController < ApplicationController
   # - The resource to be accessed, in this case graph.microsoft.com
   AUTH_CTX = ADAL::AuthenticationContext.new(
     'login.windows.net', ENV['TENANT'])
-  CLIENT_CRED = ADAL::ClientCredential.new(ENV['CLIENT_ID'], ENV['CLIENT_SECRET'])
+  CLIENT_CRED = ADAL::ClientCredential.new(
+    ENV['CLIENT_ID'],
+    ENV['CLIENT_SECRET'])
   GRAPH_RESOURCE = 'https://graph.microsoft.com'
   SENDMAIL_ENDPOINT = '/beta/me/sendmail'
   CONTENT_TYPE = 'application/json;odata.metadata=minimal;odata.streaming=true'
