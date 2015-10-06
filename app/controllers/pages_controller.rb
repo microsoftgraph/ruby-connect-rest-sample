@@ -12,7 +12,7 @@
 # To see how to get rid of the tokens and finish the session
 # in your app and Azure AD, see disconnect
 class PagesController < ApplicationController
-  skip_before_filter :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
 
   # Create the authentication context, which receives
   # - Tenant
