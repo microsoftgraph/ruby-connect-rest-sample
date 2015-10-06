@@ -37,6 +37,7 @@ class PagesController < ApplicationController
   # with an authorization code attached
   # Then the app has to make a POST request to get tokens that it can use
   # for authenticated requests to resources in graph.microsoft.com
+  # rubocop:disable Metrics/AbcSize
   def callback
     # Authentication redirects here
     code = params[:code]
@@ -59,6 +60,7 @@ class PagesController < ApplicationController
     logger.info "Email: #{@email}"
     logger.info "[callback] - Access token: #{session[:access_token]}"
   end
+  # rubocop:enable Metrics/AbcSize
 
   # Gets access (and refresh) token using the Azure OmniAuth library
   def acquire_access_token(auth_code, reply_url)
@@ -81,6 +83,7 @@ class PagesController < ApplicationController
   # - The email message is attached to the body of the request
   # - The access token must be appended to the authorization initheader
   # - Content type must be at least application/json
+  # rubocop:disable Metrics/AbcSize
   def send_mail
     logger.debug "[send_mail] - Access token: #{session[:access_token]}"
 
@@ -143,6 +146,7 @@ class PagesController < ApplicationController
 
     render 'callback'
   end
+  # rubocop:enable Metrics/AbcSize
 
   # Deletes the local session and sends the browser to the logout endpoint
   # so Azure AD has a chance to handle its own logout flow

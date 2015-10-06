@@ -1,3 +1,7 @@
+AllCops:
+  Exclude:
+    - 'bin/**'
+
 Documentation:
   Enabled: false
 
