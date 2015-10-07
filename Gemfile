@@ -53,3 +53,5 @@ gem 'adal'
 
 # On Windows systems we need tzinfo-data
 gem 'tzinfo-data'
+
+gem 'rubocop', '0.34.2'
