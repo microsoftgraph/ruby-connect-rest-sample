@@ -7,11 +7,8 @@
 # in your Azure application.
 ENV['CLIENT_ID'] = '{YOUR AZURE CLIENT ID}'
 ENV['CLIENT_SECRET'] = '{YOUR AZURE KEY}'
-ENV['REPLY_URL'] = '{YOUR AZURE REPLY URL}'
+ENV['REPLY_URL'] = 'http://localhost:9292/auth/azureactivedirectory/callback'
 
-# This should be the domain of your test account
-# For example, contoso.onmicrosoft.com
-ENV['TENANT'] = '{YOUR DOMAIN}'
 ENV['LOGOUT_ENDPOINT'] = 'https://login.microsoftonline.com/common/oauth2/logout'
 
 # Load the Rails application.
