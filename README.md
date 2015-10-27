@@ -40,7 +40,6 @@ To use the Office 365 Ruby Connect sample, the following are required.
 2. In the [environment.rb](config/environment.rb) file do the following.
 	1. Replace *{YOUR AZURE CLIENT ID}* with the client ID of your registered Azure application.
 	2. Replace *{YOUR AZURE KEY}* with the key of your registered Azure application.
-	3. Replace *{YOUR AZURE REPLY URL}* with the reply URL of your registered Azure application. 
 3. Install the Rails application and dependencies with the following command.
 
 	```
