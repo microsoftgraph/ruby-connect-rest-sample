@@ -28,7 +28,7 @@ To use the Office 365 Ruby Connect sample, the following are required.
 * The [```client ID```](app/Constants.rb#L29), [```key```](app/Constants.rb#L30), and [```reply URL```](app/Constants.rb#L31) values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. For details see [Register your brower-based web app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-Ruby-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Note:** <br />
-     During the app registration process, make sure to specify *http://localhost:9292/auth/azureactivedirectory/callback* as the **Sign-on URL**.
+     During the app registration process, make sure to specify *http://localhost:3000/auth/azureactivedirectory/callback* as the **Sign-on URL**.
 
 ## Configure and run the app
 
@@ -50,7 +50,7 @@ To use the Office 365 Ruby Connect sample, the following are required.
 	```
 	rackup
 	```
-5. Go to ```http://localhost:9292``` in your web browser.
+5. Go to ```http://localhost:3000``` in your web browser.
 
 ## Questions and comments
 
