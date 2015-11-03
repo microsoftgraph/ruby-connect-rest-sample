@@ -48,7 +48,7 @@ To use the Office 365 Ruby Connect sample, the following are required.
 4. To start the Rails application, type the following command.
 
 	```
-	rackup
+	rackup -p 3000
 	```
 5. Go to ```http://localhost:3000``` in your web browser.
 
