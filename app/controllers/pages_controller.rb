@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   # - Client ID and client secret
   # - The resource to be accessed, in this case graph.microsoft.com
   AUTH_CTX = ADAL::AuthenticationContext.new(
-    'login.windows.net', 'common')
+    'login.microsoftonline.com', 'common')
   CLIENT_CRED = ADAL::ClientCredential.new(
     ENV['CLIENT_ID'],
     ENV['CLIENT_SECRET'])
