@@ -24,7 +24,7 @@ class PagesController < ApplicationController
     ENV['CLIENT_ID'],
     ENV['CLIENT_SECRET'])
   GRAPH_RESOURCE = 'https://graph.microsoft.com'
-  SENDMAIL_ENDPOINT = '/v1.0/me/sendmail'
+  SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail'
   CONTENT_TYPE = 'application/json;odata.metadata=minimal;odata.streaming=true'
 
   # Delegates the browser to the Azure OmniAuth module
