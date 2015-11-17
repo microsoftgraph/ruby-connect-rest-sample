@@ -23,7 +23,7 @@ Rails.application.initialize!
 
 #############################################################
 ##
-## O365-Ruby-Unified-API-Connect, https://github.com/OfficeDev/O365-Ruby-Unified-API-Connect
+## O365-Ruby-Microsoft-Graph-Connect, https://github.com/OfficeDev/O365-Ruby-Microsoft-Graph-Connect
 ##
 ## Copyright (c) Microsoft Corporation
 ## All rights reserved.
