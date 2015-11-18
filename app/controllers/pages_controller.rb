@@ -24,7 +24,7 @@ class PagesController < ApplicationController
     ENV['CLIENT_ID'],
     ENV['CLIENT_SECRET'])
   GRAPH_RESOURCE = 'https://graph.microsoft.com'
-  SENDMAIL_ENDPOINT = '/beta/me/sendmail'
+  SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail'
   CONTENT_TYPE = 'application/json;odata.metadata=minimal;odata.streaming=true'
 
   # Delegates the browser to the Azure OmniAuth module
@@ -163,7 +163,7 @@ end
 
 #############################################################
 ##
-## O365-Ruby-Unified-API-Connect, https://github.com/OfficeDev/O365-Ruby-Unified-API-Connect
+## O365-Ruby-Microsoft-Graph-Connect, https://github.com/OfficeDev/O365-Ruby-Microsoft-Graph-Connect
 ##
 ## Copyright (c) Microsoft Corporation
 ## All rights reserved.
