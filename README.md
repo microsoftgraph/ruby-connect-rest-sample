@@ -6,7 +6,7 @@ Connecting to Office 365 is the first step every app must take to start working 
 
 Try out the [Get started with Office 365 APIs](http://dev.office.com/getting-started/office365apis?platform=option-ruby#setup) page which simplifies registration so you can get this sample running faster.
 
-![Office 365 Ruby Connect sample screenshot](/readme-images/O365-Ruby-Microsoft Graph-Connect.png)
+![Office 365 Ruby Connect sample screenshot](/readme-images/O365-Ruby-Microsoft-Graph-Connect.png)
 
 > Note: For an in-depth look at the code, see [Understanding Connect code sample] (https://github.com/OfficeDev/O365-Ruby-Microsoft-Graph-Connect/wiki/Understanding-Connect-code-sample).
 
