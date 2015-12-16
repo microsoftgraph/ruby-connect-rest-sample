@@ -78,7 +78,7 @@ class PagesController < ApplicationController
   # Sends an authenticated request to the sendmail endpoint in
   # graph.microsoft.com
   # The sendmail endpoint is
-  # https://graph.microsoft.com/<version>/me/sendmail
+  # https://graph.microsoft.com/v1.0/me/microsoft.graph.sendmail
   # Stuff to consider:
   # - The email message is attached to the body of the request
   # - The access token must be appended to the authorization initheader
