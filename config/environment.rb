@@ -7,6 +7,7 @@
 # in your Azure application.
 ENV['CLIENT_ID'] = 'ENTER_YOUR_CLIENT_ID'
 ENV['CLIENT_SECRET'] = 'ENTER_YOUR_SECRET'
+ENV['DOMAIN'] = 'ENTER_YOUR_DOMAIN'
 ENV['REPLY_URL'] = 'http://localhost:3000/auth/azureactivedirectory/callback'
 
 ENV['LOGOUT_ENDPOINT'] = 'https://login.microsoftonline.com/common/oauth2/logout'
