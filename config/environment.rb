@@ -5,9 +5,9 @@
 
 # The following values must match the client ID, key, and reply URL
 # in your Azure application.
-ENV['CLIENT_ID'] = 'bf90f160-c35a-44cb-93b9-6e991d4f5fd6'
-ENV['CLIENT_SECRET'] = 'PuA4FrZAor9nIn4y3ZOv4I4e0A+tG2I1E/AAHUNZG8o='
-ENV['TENANT'] = 'kikimax.onmicrosoft.com'
+ENV['CLIENT_ID'] = ''
+ENV['CLIENT_SECRET'] = ''
+ENV['TENANT'] = ''
 ENV['REPLY_URL'] = 'http://localhost:3000/auth/azureactivedirectory/callback'
 
 ENV['LOGOUT_ENDPOINT'] = 'https://login.microsoftonline.com/common/oauth2/logout'
