@@ -93,7 +93,6 @@ class PagesController < ApplicationController
     @recipient = params[:specified_email]
     @mail_sent = false
 
-
     send_mail_endpoint = URI("#{GRAPH_RESOURCE}#{SENDMAIL_ENDPOINT}")
     content_type = CONTENT_TYPE
     http = Net::HTTP.new(send_mail_endpoint.host, send_mail_endpoint.port)
