@@ -1,6 +1,6 @@
 ## Пример приложения на Ruby, подключающегося к Office 365 и использующего Microsoft Graph
 
-[ ![Состояние сборки](https://travis-ci.org/OfficeDev/O365-Ruby-Microsoft-Graph-Connect.svg?branch=master)](https://travis-ci.org/OfficeDev/O365-Ruby-Microsoft-Graph-Connect)
+[ ![Состояние сборки](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)
 
 Подключение к Office 365 — это первый шаг, который должно выполнить каждое приложение, чтобы начать работу со службами и данными Office 365. В этом примере показано, как подключить и вызвать один API с помощью Microsoft Graph (прежнее название — единый API Office 365), а также использовать платформу Office UI Fabric для работы с Office 365.
 
