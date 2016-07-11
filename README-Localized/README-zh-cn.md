@@ -1,6 +1,6 @@
 ## 使用 Microsoft Graph 的 Office 365 Ruby Connect 示例
 
-[ ![构建状态](https://travis-ci.org/OfficeDev/O365-Ruby-Microsoft-Graph-Connect.svg?branch=master)](https://travis-ci.org/OfficeDev/O365-Ruby-Microsoft-Graph-Connect)
+[ ![构建状态](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)
 
 连接到 Office 365 是每个应用开始使用 Office 365 服务和数据必须采取的第一步。该示例演示如何通过 Microsoft Graph（旧称 Office 365 统一 API）连接并调用 API，以及如何使用 Office 结构 UI 创建 Office 365 体验。
 
