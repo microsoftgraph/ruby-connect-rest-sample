@@ -18,7 +18,7 @@ Para usar o exemplo de conexão com o Office 365 para Ruby, é necessário o seg
 * Estrutura do Rails (o exemplo foi testado nos Rails 4.2).
 * Gerenciador de dependências do Bundler.
 * Interface de servidor Web Rack para Ruby.
-* Uma conta do Office 365. Inscreva-se para uma [Assinatura de Desenvolvedor do Office 365](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170), que inclui os recursos necessários para começar a criação de aplicativos do Office 365.
+* Uma conta do Office 365. Inscreva-se para uma [Assinatura de Desenvolvedor do Office 365](https://aka.ms/devprogramsignup), que inclui os recursos necessários para começar a criação de aplicativos do Office 365.
 
     > **Observação:**<br />
 	caso já tenha uma assinatura, o link anterior direciona você para uma página com a mensagem *Não é possível adicioná-la à sua conta atual*. Nesse caso, use uma conta de sua assinatura atual do Office 365.<br /><br />
