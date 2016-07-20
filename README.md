@@ -18,7 +18,7 @@ To use the Office 365 Ruby Connect sample, the following are required.
 * Rails framework (the sample has been tested on Rails 4.2).
 * Bundler dependency manager.
 * Rack web server interface for Ruby.
-* An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170&lcid=1033) that includes the resources that you need to start building Office 365 apps.
+* An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://aka.ms/devprogramsignup) that includes the resources that you need to start building Office 365 apps.
 
      > **Note:** <br />
      If you already have a subscription, the previous link sends you to a page with the message *Sorry, you can’t add that to your current account*. In that case use an account from your current Office 365 subscription.<br /><br />
