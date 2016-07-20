@@ -18,7 +18,7 @@ Zum Verwenden des Office 365 Ruby Connect-Beispiels ist Folgendes erforderlich.
 * Rails-Framework (das Beispiel wurde auf Rails 4.2 getestet).
 * Bundler Dependency Manager.
 * Rack-Webserveroberfläche für Ruby.
-* Ein Office 365-Konto. Sie können sich für [ein Office 365-Entwicklerabonnement](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170) registrieren. Dieses umfasst die Ressourcen, die Sie zum Erstellen von Office 365-Apps benötigen.
+* Ein Office 365-Konto. Sie können sich für [ein Office 365-Entwicklerabonnement](https://aka.ms/devprogramsignup) registrieren. Dieses umfasst die Ressourcen, die Sie zum Erstellen von Office 365-Apps benötigen.
 
     > **Hinweis:**<br />
 	Wenn Sie bereits über ein Abonnement verfügen, gelangen Sie über den vorherigen Link zu einer Seite mit der Meldung *Leider können Sie Ihrem aktuellen Konto diesen Inhalt nicht hinzufügen*. Verwenden Sie in diesem Fall ein Konto aus Ihrem aktuellen Office 365-Abonnement.<br /><br /> 
