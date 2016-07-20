@@ -18,7 +18,7 @@
 * Rails 架構 (已在 Rails 4.2 上測試此範例)。
 * Bundler 相依性管理員。
 * 適用於 Ruby 的 Rack Web 伺服器介面。
-* Office 365 帳戶。您可以註冊 [Office 365 開發人員訂用帳戶](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170)，其中包含開始建置 Office 365 應用程式所需的資源。
+* Office 365 帳戶。您可以註冊 [Office 365 開發人員訂用帳戶](https://aka.ms/devprogramsignup)，其中包含開始建置 Office 365 應用程式所需的資源。
 
     > **注意事項：**<br />
 	如果您已有訂用帳戶，則先前的連結會讓您連到顯示「抱歉，您無法將之新增到您目前的帳戶」訊息的頁面。在此情況下，請使用您目前的 Office 365 訂用帳戶所提供的帳戶。<br /><br />
