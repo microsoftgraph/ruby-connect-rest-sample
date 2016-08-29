@@ -25,7 +25,7 @@ en:
   login_instructions: "Use the button below to connect to Microsoft Graph."
   connect_button: "Connect to Microsoft Graph"
   disconnect_button: "Disconnect"
-  connect_message: "You're now connected to the Microsoft Graph. Click the mail icon below to send a message from your Office 365 account."
+  connect_message: "You're now connected to the Microsoft Graph. Click the mail icon below to send a message from your Microsoft account."
   email_success: "Successfully sent an email to %{recipient}."
   email_error: "Something went wrong, couldn't send an email. "
   greet_username: "Hello %{user}!"

@@ -18,11 +18,11 @@ class PagesController < ApplicationController
   # - Tenant
   # - Client ID and client secret
   # - The resource to be accessed, in this case graph.microsoft.com
-  AUTH_CTX = ADAL::AuthenticationContext.new(
-    'login.microsoftonline.com', 'common')
-  CLIENT_CRED = ADAL::ClientCredential.new(
-    ENV['CLIENT_ID'],
-    ENV['CLIENT_SECRET'])
+  # AUTH_CTX = ADAL::AuthenticationContext.new(
+  #   'login.microsoftonline.com', 'common')
+  # CLIENT_CRED = ADAL::ClientCredential.new(
+  #   ENV['CLIENT_ID'],
+  #   ENV['CLIENT_SECRET'])
   GRAPH_RESOURCE = 'https://graph.microsoft.com'
   SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail'
   CONTENT_TYPE = 'application/json;odata.metadata=minimal;odata.streaming=true'
@@ -30,46 +30,77 @@ class PagesController < ApplicationController
   # Delegates the browser to the Azure OmniAuth module
   # which takes the user to a sign-in page, if we don't have tokens already
   def login
-    redirect_to '/auth/azureactivedirectory'
+    redirect_to '/auth/microsoft_v2_auth'
   end
 
   # If the user had to sign-in, the browser will redirect to this callback
   # with an authorization code attached
   # Then the app has to make a POST request to get tokens that it can use
   # for authenticated requests to resources in graph.microsoft.com
-  # rubocop:disable Metrics/AbcSize
+
   def callback
-    # Authentication redirects here
-    code = params[:code]
+    data = request.env['omniauth.auth']
+    token = data['credentials']['token']
 
-    # Used in the template
-    @name = auth_hash.info.name
-    @email = auth_hash.info.email
-
-    # Request an access token
-    result = acquire_access_token(code, ENV['REPLY_URL'])
+    @email = data[:extra][:raw_info][:userPrincipalName]
+    @name = data[:extra][:raw_info][:displayName]
 
     # Associate token/user values to the session
-    session[:access_token] = result.access_token
+    session[:access_token] = data['credentials']['token']
     session[:name] = @name
     session[:email] = @email
 
     # Debug logging
-    logger.info "Code: #{code}"
     logger.info "Name: #{@name}"
     logger.info "Email: #{@email}"
     logger.info "[callback] - Access token: #{session[:access_token]}"
+
+    callback = Proc.new { |r| r.headers["Authorization"] = 'Bearer '+token}
+    graph = MicrosoftGraph.new(
+        base_url: "https://graph.microsoft.com/v1.0/",
+        cached_metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, "metadata_v1.0.xml"),
+        &callback
+    )
+
+    me = graph.me
+
+    #TODO: remove these once I'm done testing
+    @data = data
+    @method_list = graph.me.public_methods(false)
+    @messages_method_list = graph.me.messages.public_methods(false)
+
+
+    # # Authentication redirects here
+    # code = params[:code]
+    #
+    # # Used in the template
+    # @name = auth_hash.info.name
+    # @email = auth_hash.info.email
+    #
+    # # Request an access token
+    # result = acquire_access_token(code, ENV['REPLY_URL'])
+    #
+    # # Associate token/user values to the session
+    # session[:access_token] = result.access_token
+    # session[:name] = @name
+    # session[:email] = @email
+    #
+    # # Debug logging
+    # logger.info "Code: #{code}"
+    # logger.info "Name: #{@name}"
+    # logger.info "Email: #{@email}"
+    # logger.info "[callback] - Access token: #{session[:access_token]}"
   end
   # rubocop:enable Metrics/AbcSize
 
   # Gets access (and refresh) token using the Azure OmniAuth library
-  def acquire_access_token(auth_code, reply_url)
-    AUTH_CTX.acquire_token_with_authorization_code(
-      auth_code,
-      reply_url,
-      CLIENT_CRED,
-      GRAPH_RESOURCE)
-  end
+  # def acquire_access_token(auth_code, reply_url)
+  #   AUTH_CTX.acquire_token_with_authorization_code(
+  #     auth_code,
+  #     reply_url,
+  #     CLIENT_CRED,
+  #     GRAPH_RESOURCE)
+  # end
 
   def auth_hash
     request.env['omniauth.auth']

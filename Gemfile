@@ -46,10 +46,14 @@ group :development, :test do
 end
 
 # AzureAD specific strategy for OmniAuth.
-gem 'omniauth-azure-activedirectory'
-
+# gem 'omniauth-azure-activedirectory'
 # Acquires access tokens for resources.
-gem 'adal'
+# gem 'adal'
+
+gem 'omniauth'
+gem 'omniauth-oauth2'
+gem 'omniauth-microsoft_v2_auth'
+gem 'microsoft_graph'
 
 # On Windows systems we need tzinfo-data
 gem 'tzinfo-data'
