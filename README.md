@@ -20,12 +20,6 @@ To use this sample, the following are required:
 - Rack web server interface for Ruby.
 - A [Microsoft account](https://www.outlook.com/) or an [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
-
-* The [```client ID```](app/Constants.rb#L29), [```key```](app/Constants.rb#L30), and [```reply URL```](app/Constants.rb#L31) values of an application registered in Azure. This sample application must be granted the **Send mail as a user** permission for **Microsoft Graph**. For details see [Register your brower-based web app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-Ruby-Microsoft-Graph-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
-
-     > **Note:** <br />
-     During the app registration process, make sure to specify *http://localhost:3000/auth/azureactivedirectory/callback* as the **Sign-on URL**.
-
 ## Register the application
 
 Register an app on the Microsoft App Registration Portal. This generates the app ID and password that you'll use to configure the app for authentication.
