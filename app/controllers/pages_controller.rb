@@ -4,34 +4,33 @@
 ##
 
 # The controller manages the interaction of the pages with
-# Azure AD and graph.microsoft.com
-# To see how to get tokens for your app look at the
-# login, callback, and acquire_access_token
+# the v2 authentication endpoint and the Microsoft Graph
+# To see how to get tokens for your app look at login and callback
 # To see how to send an email using the graph.microsoft.com
 # endpoint see send_mail
 # To see how to get rid of the tokens and finish the session
-# in your app and Azure AD, see disconnect
+# in your app, see disconnect
+
 class PagesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  # Create the authentication context, which receives
-
+  # Specifies endpoint for connecting to the Microsoft Graph
   GRAPH_RESOURCE = 'https://graph.microsoft.com'
   SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail'
   CONTENT_TYPE = 'application/json;odata.metadata=minimal;odata.streaming=true'
 
-  # Delegates the browser to the Azure OmniAuth module
+  # Delegates the browser to the v2 authentication OmniAuth module
   # which takes the user to a sign-in page, if we don't have tokens already
   def login
     redirect_to '/auth/microsoft_v2_auth'
   end
 
   # If the user had to sign-in, the browser will redirect to this callback
-  # with an authorization code attached
-  # Then the app has to make a POST request to get tokens that it can use
-  # for authenticated requests to resources in graph.microsoft.com
+  # with the authorization tokens attached
 
   def callback
+    # Access the authentication hash for omniauth
+    # and extract the auth token, user name, and email
     data = request.env['omniauth.auth']
     token = data['credentials']['token']
 
@@ -48,6 +47,8 @@ class PagesController < ApplicationController
     logger.info "Email: #{@email}"
     logger.info "[callback] - Access token: #{session[:access_token]}"
 
+    # Use the auth token to access the Microsoft graph
+    # and get an object representing the signed-in user
     callback = Proc.new { |r| r.headers["Authorization"] = 'Bearer '+token}
     graph = MicrosoftGraph.new(
         base_url: "https://graph.microsoft.com/v1.0/",
