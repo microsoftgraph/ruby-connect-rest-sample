@@ -46,18 +46,6 @@ class PagesController < ApplicationController
     logger.info "Name: #{@name}"
     logger.info "Email: #{@email}"
     logger.info "[callback] - Access token: #{session[:access_token]}"
-
-    # Use the auth token to access the Microsoft graph
-    # and get an object representing the signed-in user
-    callback = Proc.new { |r| r.headers["Authorization"] = 'Bearer '+token}
-    graph = MicrosoftGraph.new(
-        base_url: "https://graph.microsoft.com/v1.0/",
-        cached_metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, "metadata_v1.0.xml"),
-        &callback
-    )
-
-    @me = graph.me
-
   end
 
   def auth_hash
