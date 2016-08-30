@@ -8,7 +8,7 @@ The sample uses OmniAuth middleware to authenticate against the v2 authenticatio
 
 The sample also uses the Office Fabric UI for styling and formatting the user experience.
 
-![Office 365 Ruby Connect sample screenshot](/readme-images/O365-Ruby-Microsoft-Graph-Connect.png)
+![Office 365 Ruby Connect sample screenshot](/readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
 ## Prerequisites
 
