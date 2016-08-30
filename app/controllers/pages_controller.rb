@@ -15,14 +15,7 @@ class PagesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   # Create the authentication context, which receives
-  # - Tenant
-  # - Client ID and client secret
-  # - The resource to be accessed, in this case graph.microsoft.com
-  # AUTH_CTX = ADAL::AuthenticationContext.new(
-  #   'login.microsoftonline.com', 'common')
-  # CLIENT_CRED = ADAL::ClientCredential.new(
-  #   ENV['CLIENT_ID'],
-  #   ENV['CLIENT_SECRET'])
+
   GRAPH_RESOURCE = 'https://graph.microsoft.com'
   SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail'
   CONTENT_TYPE = 'application/json;odata.metadata=minimal;odata.streaming=true'
@@ -62,45 +55,9 @@ class PagesController < ApplicationController
         &callback
     )
 
-    me = graph.me
+    @me = graph.me
 
-    #TODO: remove these once I'm done testing
-    @data = data
-    @method_list = graph.me.public_methods(false)
-    @messages_method_list = graph.me.messages.public_methods(false)
-
-
-    # # Authentication redirects here
-    # code = params[:code]
-    #
-    # # Used in the template
-    # @name = auth_hash.info.name
-    # @email = auth_hash.info.email
-    #
-    # # Request an access token
-    # result = acquire_access_token(code, ENV['REPLY_URL'])
-    #
-    # # Associate token/user values to the session
-    # session[:access_token] = result.access_token
-    # session[:name] = @name
-    # session[:email] = @email
-    #
-    # # Debug logging
-    # logger.info "Code: #{code}"
-    # logger.info "Name: #{@name}"
-    # logger.info "Email: #{@email}"
-    # logger.info "[callback] - Access token: #{session[:access_token]}"
   end
-  # rubocop:enable Metrics/AbcSize
-
-  # Gets access (and refresh) token using the Azure OmniAuth library
-  # def acquire_access_token(auth_code, reply_url)
-  #   AUTH_CTX.acquire_token_with_authorization_code(
-  #     auth_code,
-  #     reply_url,
-  #     CLIENT_CRED,
-  #     GRAPH_RESOURCE)
-  # end
 
   def auth_hash
     request.env['omniauth.auth']
@@ -108,8 +65,6 @@ class PagesController < ApplicationController
 
   # Sends an authenticated request to the sendmail endpoint in
   # graph.microsoft.com
-  # The sendmail endpoint is
-  # https://graph.microsoft.com/v1.0/me/microsoft.graph.sendmail
   # Stuff to consider:
   # - The email message is attached to the body of the request
   # - The access token must be appended to the authorization initheader
