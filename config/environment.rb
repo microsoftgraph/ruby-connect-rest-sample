@@ -9,8 +9,6 @@ ENV['CLIENT_ID'] = 'ENTER_YOUR_CLIENT_ID'
 ENV['CLIENT_SECRET'] = 'ENTER_YOUR_SECRET'
 ENV['SCOPE'] = 'openid email profile https://graph.microsoft.com/User.Read https://graph.microsoft.com/Mail.Send'
 
-ENV['LOGOUT_ENDPOINT'] = 'https://login.microsoftonline.com/common/oauth2/logout'
-
 # Load the Rails application.
 require File.expand_path('../application', __FILE__)
 

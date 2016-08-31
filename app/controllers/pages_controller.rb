@@ -124,15 +124,12 @@ class PagesController < ApplicationController
   end
   # rubocop:enable Metrics/AbcSize
 
-  # Deletes the local session and sends the browser to the logout endpoint
-  # so Azure AD has a chance to handle its own logout flow
-  # After Azure AD is done, it redirects the browser to the value in
-  # post_logout_redirect_uri, which happens to be our start screen
+  # Deletes the local session and redirects to root
+  # the v2 endpoint doesn't currently support a logout endpoint
+  # so we can't call it for a v2 logout flow
   def disconnect
     reset_session
-    redirect = "#{ENV['LOGOUT_ENDPOINT']}"\
-               "?post_logout_redirect_uri=#{ERB::Util.url_encode(root_url)}"
-    logger.info 'REDIRECT: ' + redirect
-    redirect_to redirect
+    logger.info 'LOGOUT'
+    redirect_to '/'
   end
 end

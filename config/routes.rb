@@ -12,10 +12,6 @@ Rails.application.routes.draw do
   root 'pages#index'
   get '/login', to: 'pages#login'
 
-  # This is where we send people to authenticate with OmniAuth.
-  # get '/auth/azureactivedirectory', as: :sign_in
-
-
   # This is where we are redirected if OmniAuth successfully authenticates
   # the user.
   match '/auth/:provider/callback', to: 'pages#callback', via: [:get, :post]
