@@ -1,6 +1,6 @@
 ## 使用 Microsoft Graph 的 Office 365 Ruby Connect 範例
 
-[ ![組建狀態](https://travis-ci.org/OfficeDev/O365-Ruby-Microsoft-Graph-Connect.svg?branch=master)](https://travis-ci.org/OfficeDev/O365-Ruby-Microsoft-Graph-Connect)
+[ ![組建狀態](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
 
 連接到 Office 365 是每個應用程式要開始使用 Office 365 服務和資料時必須採取的第一個步驟。此範例示範如何透過 Microsoft Graph (之前稱為 Office 365 統一 API) 連接而後呼叫一個 API，然後使用 Office Fabric UI 來打造 Office 365 經驗。
 
@@ -18,7 +18,7 @@
 * Rails 架構 (已在 Rails 4.2 上測試此範例)。
 * Bundler 相依性管理員。
 * 適用於 Ruby 的 Rack Web 伺服器介面。
-* Office 365 帳戶。您可以註冊 [Office 365 開發人員訂用帳戶](https://portal.office.com/Signup/Signup.aspx?OfferId=6881A1CB-F4EB-4db3-9F18-388898DAF510&DL=DEVELOPERPACK&ali=1#0)，其中包含開始建置 Office 365 應用程式所需的資源。
+* Office 365 帳戶。您可以註冊 [Office 365 開發人員訂用帳戶](https://aka.ms/devprogramsignup)，其中包含開始建置 Office 365 應用程式所需的資源。
 
     > **注意事項：**<br />
 	如果您已有訂用帳戶，則先前的連結會讓您連到顯示「抱歉，您無法將之新增到您目前的帳戶」訊息的頁面。在此情況下，請使用您目前的 Office 365 訂用帳戶所提供的帳戶。<br /><br />

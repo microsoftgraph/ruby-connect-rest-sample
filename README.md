@@ -1,4 +1,4 @@
-﻿## Microsoft Graph Ruby on Rails Connect Sample 
+﻿## Microsoft Graph Ruby on Rails Connect Sample
 
 [![Build Status](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
 
@@ -28,23 +28,23 @@ Register an app on the Microsoft App Registration Portal. This generates the app
 
 2. Choose **Add an app**.
 
-3. Enter a name for the app, and choose **Create application**. 
-	
+3. Enter a name for the app, and choose **Create application**.
+
 	The registration page displays, listing the properties of your app.
 
-4. Copy the application ID. This is the unique identifier for your app. 
+4. Copy the application ID. This is the unique identifier for your app.
 
 5. Under **Application Secrets**, choose **Generate New Password**. Copy the password from the **New password generated** dialog.
 
-	You'll use the application ID and password to configure the app. 
+	You'll use the application ID and password to configure the app.
 
 6. Under **Platforms**, choose **Add platform** > **Web**.
 
-7. Make sure the **Allow Implicit Flow** check box is selected, and enter *http://localhost:3000/auth/microsoft_v2_auth/callback* as the Redirect URI. 
+7. Make sure the **Allow Implicit Flow** check box is selected, and enter *http://localhost:3000/auth/microsoft_v2_auth/callback* as the Redirect URI.
 
 	The **Allow Implicit Flow** option enables the OpenID Connect hybrid flow. During authentication, this enables the app to receive both sign-in info (the **id_token**) and artifacts (in this case, an authorization code) that the app uses to obtain an access token.
-	
-	The redirect URI *http://localhost:3000/auth/microsoft_v2_auth/callback* is the value that the OmniAuth middleware is configured to use once it has processed the authentication request. 
+
+	The redirect URI *http://localhost:3000/auth/microsoft_v2_auth/callback* is the value that the OmniAuth middleware is configured to use once it has processed the authentication request.
 
 8. Choose **Save**.
 
@@ -72,6 +72,13 @@ Register an app on the Microsoft App Registration Portal. This generates the app
 	```
 5. Go to ```http://localhost:3000``` in your web browser.
 
+<a name="contributing"></a>
+## Contributing ##
+
+If you'd like to contribute to this sample, see [CONTRIBUTING.MD](/CONTRIBUTING.md).
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
 ## Questions and comments
 
 We'd love to get your feedback about the Microsoft Graph Ruby on Rails Connect sample. You can send your questions and suggestions to us in the [Issues](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues) section of this repository.
@@ -83,7 +90,7 @@ Your feedback is important to us. Connect with us on [Stack Overflow](http://sta
 If you'd like to contribute to this sample, see CONTRIBUTING.MD.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-  
+
 ## Additional resources
 
 - [Other Microsoft Graph Connect samples](https://github.com/MicrosoftGraph?utf8=%E2%9C%93&query=-Connect)
