@@ -45,15 +45,11 @@ group :development, :test do
   gem 'spring'
 end
 
-# AzureAD specific strategy for OmniAuth.
-# gem 'omniauth-azure-activedirectory'
-# Acquires access tokens for resources.
-# gem 'adal'
-
+# Authentication resources
 gem 'omniauth'
 gem 'omniauth-oauth2'
-gem 'omniauth-microsoft_v2_auth'
-gem 'microsoft_graph'
+#gem 'omniauth-microsoft_v2_auth'
+gem 'omniauth-microsoft_v2_auth', path: './omniauth-microsoft_v2_auth'
 
 # On Windows systems we need tzinfo-data
 gem 'tzinfo-data'
