@@ -1,0 +1,40 @@
+<!--
+Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+See LICENSE in the project root for license information.
+-->
+
+<div class="ms-Grid-row">
+   <!-- App navigation bar markup. -->
+   <div class="ms-NavBar">
+      <ul class="ms-NavBar-items">
+         <li class="navbar-header"><%= t('app_title') %></li>
+         <li class="ms-NavBar-item ms-NavBar-item--right" onclick="window.location.href='/disconnect'"><i class="ms-Icon ms-Icon--x"></i> <%= t('disconnect_button') %></li>
+      </ul>
+   </div>
+   <!-- App main content markup. -->
+   <form action="../../send_mail" method="post">
+      <div class="ms-Grid-col ms-u-mdPush1 ms-u-md9 ms-u-lgPush1 ms-u-lg6">
+         <div>
+            <h2 class="ms-font-xxl ms-fontWeight-semibold"><%=t 'greet_username', user: @name %></h2>
+            <p class="ms-font-xl"><%= t('connect_message') %></p>
+            <div class="ms-TextField">
+               <input class="ms-TextField-field" name="specified_email" value="<%= @email %>">
+            </div>
+            <button class="ms-Button">
+            <span class="ms-Button-label"><i class="ms-Icon ms-Icon--mail" aria-hidden="true"></i><%= t('send_mail_button') %></span>
+            </button>
+
+            <!-- Result notification area -->
+            <div>
+            <%if @mail_sent %>
+               <p class="ms-font-m ms-fontColor-green"><%= t('email_success', recipient: @recipient ) %> </p>
+            <% elsif !@mail_sent && flash[:httpError] %>
+               <p class="ms-font-m ms-fontColor-redDark"><%= t('email_error') %><%= flash[:httpError] %></p>
+            <% end %>
+            </div>
+            <div>
+            </div>
+         </div>
+      </div>
+   </form>
+</div>
