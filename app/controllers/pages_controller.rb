@@ -32,7 +32,6 @@ class PagesController < ApplicationController
     # Access the authentication hash for omniauth
     # and extract the auth token, user name, and email
     data = request.env['omniauth.auth']
-    token = data['credentials']['token']
 
     @email = data[:extra][:raw_info][:userPrincipalName]
     @name = data[:extra][:raw_info][:displayName]

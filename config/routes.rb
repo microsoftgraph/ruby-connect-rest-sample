@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   # This is where we are redirected if OmniAuth successfully authenticates
   # the user.
   match '/auth/:provider/callback', to: 'pages#callback', via: [:get, :post]
-  # get 'auth/microsoft_v2_auth/callback', to: 'sessions#create'
-
+  
   match '/send_mail', to: 'pages#send_mail', via: [:post]
 
   match '/disconnect', to: 'pages#disconnect', via: [:get]
