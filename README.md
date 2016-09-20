@@ -2,9 +2,9 @@
 
 [![Build Status](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
 
-Use Microsoft Graph to access a user’s Microsoft account data from within a Ruby on Rails web application. This sample uses REST calls directly to the Microsoft Graph endpoint to work with user data--in this case, to send an email as the user.
+Use Microsoft Graph to access a user’s Microsoft account resources from within a Ruby on Rails web application. This sample uses REST calls directly to the Microsoft Graph endpoint to work with user resources--in this case, to send an email as the user.
 
-The sample uses OmniAuth middleware to authenticate against the v2 authentication endpoint. The v2 endpoint enables developers to write a single code flow that handles authentication for both users' work or school (Azure Active Directory) or personal (Microsoft) accounts, including Office 365, Outlook.com, and OneDrive accounts.
+The sample uses OmniAuth middleware to authenticate against the Azure AD v2.0 endpoint. The Azure AD v2.0 endpoint enables developers to write a single code flow that handles authentication for both users' work or school (Azure Active Directory) or personal (Microsoft) accounts, including Office 365, Outlook.com, and OneDrive accounts.
 
 The sample also uses the Office Fabric UI for styling and formatting the user experience.
 
@@ -34,9 +34,9 @@ Register an app on the Microsoft App Registration Portal. This generates the app
 
 4. Copy the application ID. This is the unique identifier for your app.
 
-5. Under **Application Secrets**, choose **Generate New Password**. Copy the password from the **New password generated** dialog.
+5. Under **Application Secrets**, choose **Generate New Password**. Copy the app secret from the **New password generated** dialog.
 
-	You'll use the application ID and password to configure the app.
+	You'll use the application ID and app secret to configure the app.
 
 6. Under **Platforms**, choose **Add platform** > **Web**.
 
@@ -57,8 +57,8 @@ Register an app on the Microsoft App Registration Portal. This generates the app
 	gem install bundler rack
 	```
 2. In the [config/environment.rb](config/environment.rb) file do the following.
-    1. Replace *ENTER_YOUR_CLIENT_ID* with the client ID of your registered  application.
-    2. Replace *ENTER_YOUR_SECRET* with the key of your registered application.
+    1. Replace *ENTER_YOUR_CLIENT_ID* with the app ID of your registered  application.
+    2. Replace *ENTER_YOUR_SECRET* with the app secret for your registered application.
 
 3. Install the Rails application and dependencies with the following command.
 
@@ -85,12 +85,10 @@ We'd love to get your feedback about the Microsoft Graph Ruby on Rails Connect s
 
 Your feedback is important to us. Connect with us on [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Tag your questions with [MicrosoftGraph].
 
-## Additional resources
+## See also
 
 - [Other Microsoft Graph Connect samples](https://github.com/MicrosoftGraph?utf8=%E2%9C%93&query=-Connect)
-- [Microsoft Graph overview](http://graph.microsoft.io)
-- [Office developer code samples](http://dev.office.com/code-samples)
-- [Office dev center](http://dev.office.com/)
+- [Microsoft Graph dev center](http://graph.microsoft.io)
 - [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)
 
 ## Copyright
