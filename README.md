@@ -8,8 +8,6 @@ Try out the [Get started with Office 365 APIs](http://dev.office.com/getting-sta
 
 ![Office 365 Ruby Connect sample screenshot](/readme-images/O365-Ruby-Microsoft-Graph-Connect.png)
 
-> Note: For an in-depth look at the code, see [Call Microsoft Graph in a Ruby app] (https://graph.microsoft.io/en-us/docs/platform/ruby).
-
 ## Prerequisites
 
 To use the Office 365 Ruby Connect sample, the following are required.
