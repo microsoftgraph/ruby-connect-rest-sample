@@ -4,8 +4,6 @@
 
 Connecting to Office 365 is the first step every app must take to start working with Office 365 services and data. This sample shows how to connect and then call one API through Microsoft Graph (previously called Office 365 unified API), and uses the Office Fabric UI to create an Office 365 experience.
 
-Try out the [Get started with Office 365 APIs](http://dev.office.com/getting-started/office365apis?platform=option-ruby#setup) page which simplifies registration so you can get this sample running faster.
-
 ![Office 365 Ruby Connect sample screenshot](/readme-images/O365-Ruby-Microsoft-Graph-Connect.png)
 
 ## Prerequisites
@@ -23,12 +21,28 @@ To use the Office 365 Ruby Connect sample, the following are required.
      If you're already signed in to Office 365, the sign in button in the previous link shows the message *Sorry, we can't process your request*. In that case sign out from Office 365 on that same page and sign in again.
 * A Microsoft Azure Tenant to register your application. Azure Active Directory (AD) provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
-     > **Important:** <br />
-     You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
-* The [```client ID```](app/Constants.rb#L29), [```key```](app/Constants.rb#L30), and [```reply URL```](app/Constants.rb#L31) values of an application registered in Azure. This sample application must be granted the **Send mail as a user** permission for **Microsoft Graph**. For details see [Register your brower-based web app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-Ruby-Microsoft-Graph-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
+<!--     > **Important:** <br />
+     You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.-->
+* The [```client ID```](app/Constants.rb#L29), [```key```](app/Constants.rb#L30), and [```reply URL```](app/Constants.rb#L31) values of an application registered in Azure. This sample application must be granted the **Send mail as a user** permission for **Microsoft Graph**.
 
-     > **Note:** <br />
-     During the app registration process, make sure to specify *http://localhost:3000/auth/azureactivedirectory/callback* as the **Sign-on URL**.
+
+## Register the app
+
+Registering your web application is the first step. 
+
+1. Sign in to the [Azure portal](https://portal.azure.com/).
+2. On the top bar, click on your account and under the **Directory** list, choose the Active Directory tenant where you wish to register your application.
+3. Click on **More Services** in the left hand nav, and choose **Azure Active Directory**.
+4. Click on **App registrations** and choose **Add**.
+5. Enter a friendly name for the application, for example 'MSGraphConnectRuby' and select 'Web app/API' as the **Application Type**. For the Sign-on URL, enter ‘http://localhost:3000/auth/azureactivedirectory/callback’. Click on **Create** to create the application.
+6. While still in the Azure portal, choose your application, click on **Settings** and choose **Properties**.
+7. Find the Application ID value and copy it to the clipboard.
+8. Configure Permissions for your application:
+9. In the **Settings** menu, choose the **Required permissions** section, click on **Add**, then **Select an API**, and select **Microsoft Graph**.
+10. Then, click on Select Permissions and select **Sign in and read user profile** and **Send mail as a user**. Click **Select** and then **Done**.
+11. In the **Settings** menu, choose the **Keys** section. Enter a description and select a duration for the key. Click **Save**.
+12. **Important**: Copy the key value. You won't be able to access this value again once you leave this pane. You will use this value as your app secret.
+
 
 ## Configure and run the app
 
