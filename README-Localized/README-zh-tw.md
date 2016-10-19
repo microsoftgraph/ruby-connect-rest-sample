@@ -1,74 +1,95 @@
-## 使用 Microsoft Graph 的 Office 365 Ruby Connect 範例
+## <a name="microsoft-graph-ruby-on-rails-connect-sample"></a>Microsoft Graph Ruby on Rails Connect 範例
 
-[ ![組建狀態](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
+[![組建狀態](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
 
-連接到 Office 365 是每個應用程式要開始使用 Office 365 服務和資料時必須採取的第一個步驟。此範例示範如何透過 Microsoft Graph (之前稱為 Office 365 統一 API) 連接而後呼叫一個 API，然後使用 Office Fabric UI 來打造 Office 365 經驗。
+您可以使用 Microsoft Graph，從 Ruby on Rails Web 應用程式內存取使用者的 Microsoft 帳戶資源。此範例會使用 REST 呼叫直接連至 Microsoft Graph 端點以使用使用者資源 (在此情況下，以使用者傳送身分電子郵件)。
 
-嘗試可簡化註冊的 [Office 365 API 入門](http://dev.office.com/getting-started/office365apis?platform=option-ruby#setup)頁面，以便您更快速地執行這個範例。
+此範例會使用 OmniAuth 中介軟體的 Azure AD 2.0 版端點進行驗證。Azure AD 2.0 版端點可讓開發人員撰寫單一程式碼流程，處理使用者的工作或學校 (Azure Active Directory) 和個人 (Microsoft) 帳戶的驗證，包括 Office 365、Outlook.com 和 OneDrive 帳戶。
 
-![Office 365 Ruby Connect 範例螢幕擷取畫面](../readme-images/O365-Ruby-Microsoft-Graph-Connect.png)  
+此範例也會使用 Office 結構 UI 來對使用者經驗設定樣式和格式。
 
-> 注意事項： 如需深入了解程式碼，請參閱[ Ruby 應用程式中呼叫 Microsoft Graph](https://graph.microsoft.io/zh-tw/docs/platform/ruby)。
+![Microsoft Ruby on Rails 連線範例螢幕擷取畫面](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
-## 必要條件
+## <a name="prerequisites"></a>必要條件
 
-若要使用 Office 365 Ruby Connect 範例，需要有下列各項。
+若要使用此範例，需要有下列各項：
 
-* Ruby 2.1 用以在開發伺服器上執行範例。
-* Rails 架構 (已在 Rails 4.2 上測試此範例)。
-* Bundler 相依性管理員。
-* 適用於 Ruby 的 Rack Web 伺服器介面。
-* Office 365 帳戶。您可以註冊 [Office 365 開發人員訂用帳戶](https://aka.ms/devprogramsignup)，其中包含開始建置 Office 365 應用程式所需的資源。
+- Ruby 2.1 用以在開發伺服器上執行範例。
+- Rails 架構 (已在 Rails 4.2 上測試此範例)。
+- Bundler 相依性管理員。
+- 適用於 Ruby 的 Rack Web 伺服器介面。
+- [Microsoft 帳戶](https://www.outlook.com/)或[ 商務用 Office 365 帳戶](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
-    > **注意事項：**<br />
-	如果您已有訂用帳戶，則先前的連結會讓您連到顯示「抱歉，您無法將之新增到您目前的帳戶」訊息的頁面。在此情況下，請使用您目前的 Office 365 訂用帳戶所提供的帳戶。<br /><br />
-	如果您已登入 Office 365，先前連結中的登入按鈕會顯示「抱歉，我們無法處理您的要求」訊息。在此情況下，在相同的頁面登出 Office 365，再重新登入。
-* 用來註冊您的應用程式的 Microsoft Azure 租用戶。Azure Active Directory (AD) 會提供識別服務，以便應用程式用於驗證和授權。在 [Microsoft Azure](https://account.windowsazure.com/SignUp) 可以取得試用版的訂用帳戶。
+## <a name="register-the-application"></a>註冊應用程式
 
-    > **重要事項：**<br />
-	您還需要確定您的 Azure 訂用帳戶已繫結至您的 Office 365 租用戶。若要執行這項操作，請參閱 Active Directory 小組的部落格文章：[建立和管理多個 Windows Azure Active Directory](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx)。**新增目錄**一節將說明如何執行這項操作。如需詳細資訊，也可以參閱[設定 Office 365 開發環境](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription)和**建立 Office 365 帳戶與 Azure AD 的關聯以便建立和管理應用程式**一節。
-* 在 Azure 中註冊之應用程式的 [```client ID```](app/Constants.rb#L29)、[```key```](app/Constants.rb#L30) 和 [```reply URL```](app/Constants.rb#L31)。此範例應用程式必須取得 **Microsoft Graph** 的 [以使用者身分傳送郵件] 權限。如需詳細資訊，請參閱[在 Azure 管理入口網站中註冊以瀏覽器為基礎的 Web 應用程式](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp)及[授與適當的權限給 Connect 應用程式](https://github.com/OfficeDev/O365-Ruby-Microsoft-Graph-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure)。
+在 Microsoft 應用程式註冊入口網站上註冊應用程式。這會產生您會用來設定驗證應用程式的應用程式 ID 和密碼。
 
-     > **注意事項：**<br />
-	 在應用程式註冊過程中，請務必指定 *http://localhost:3000/auth/azureactivedirectory/callback* 做為 [登入 URL]。
+1. 使用您的個人或工作或學校帳戶登入 [Microsoft 應用程式註冊入口網站](https://apps.dev.microsoft.com/)。
 
-## 設定和執行應用程式
+2. 選擇 [新增應用程式]****。
 
+3. 為應用程式輸入名稱，然後選擇 [建立應用程式]****。
+
+    [註冊] 頁面隨即顯示，列出您的應用程式的屬性。
+
+4. 複製應用程式 ID。這是您的應用程式的唯一識別碼。
+
+5. 在 [應用程式密碼]**** 底下，選擇 [產生新密碼]****。從 [產生的新密碼]**** 對話方塊中複製應用程式密碼。
+
+    您將使用應用程式 ID 及應用程式密碼來設定應用程式。
+
+6. 在 [平台]**** 底下，選擇 [新增平台]**** > **Web**。
+
+7. 請確定已選取 [允許隱含的流程]**** 核取方塊，然後輸入 *http://localhost:3000/auth/microsoft_v2_auth/callback* 做為重新導向 URI。
+
+    [允許隱含的流程]**** 選項會啟用 OpenID Connect 混合式流程。在驗證期間，這可讓應用程式收到登入資訊 (**id_token**) 和成品 (在這種情況下，是授權程式碼)，應用程式用來取得存取權杖。
+
+    重新導向 URI *http://localhost:3000/auth/microsoft_v2_auth/callback* 是 OmniAuth 中介軟體已設定要使用的值 (若已處理驗證要求)。
+
+8. 選擇 [儲存]****。
+
+## <a name="build-and-run-the-sample"></a>建置及執行範例
+
+1. 下載或複製範例，並在您所選擇的編輯器中開啟。
 1. 如果您還沒有 Bundler 和 Rack，您可以使用下列命令來安裝它們。
 
-	```
-	gem install bundler rack
-	```
-2. 在 [environment.rb](config/environment.rb) 檔案中執行下列動作。
-    1. 用已註冊之 Azure 應用程式的用戶端識別碼來取代 *ENTER_YOUR_CLIENT_ID*。
-    2. 用已註冊之 Azure 應用程式的金鑰來取代 *ENTER_YOUR_SECRET*。
-    3. 以您的租用戶 (格式為 *your_tenant.onmicrosoft.com*) 取代 *ENTER_YOUR_TENANT*。
+    ```
+    gem install bundler rack
+    ```
+2. 在 [config/environment.rb](config/environment.rb) 檔案中執行下列動作。
+    1. 用已註冊應用程式的應用程式 ID 來取代 *ENTER_YOUR_CLIENT_ID*。
+    2. 用已註冊應用程式的應用程式密碼來取代 *ENTER_YOUR_SECRET*。
+
 3. 使用下列命令來安裝 Rails 應用程式和相依項目。
 
-	```
-	bundle install
-	```
+    ```
+    bundle install
+    ```
 4. 若要啟動 Rails 應用程式，請輸入下列命令。
 
-	```
-	rackup -p 3000
-	```
+    ```
+    rackup -p 3000
+    ```
 5. 在網頁瀏覽器中前往 ```http://localhost:3000```。
 
-## 問題與意見
+<a name="contributing"></a>
+## <a name="contributing"></a>參與 ##
 
-我們很樂於收到您對於 Office 365 Ruby Connect 範例的意見反應。您可以在此儲存機制的[問題](https://github.com/OfficeDev/O365-Ruby-Microsoft-Graph-Connect/issues)區段中，將您的問題及建議傳送給我們。
+如果您想要參與這個範例，請參閱 [CONTRIBUTING.MD](/CONTRIBUTING.md)。
 
-請在 [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API) 提出有關 Office 365 開發的一般問題。務必以 [Office365] 和 [API] 標記您的問題或意見。
-  
-## 其他資源
+此專案已採用 [Microsoft 開放原始碼執行](https://opensource.microsoft.com/codeofconduct/)。如需詳細資訊，請參閱[程式碼執行常見問題集](https://opensource.microsoft.com/codeofconduct/faq/)，如果有其他問題或意見，請連絡 [opencode@microsoft.com](mailto:opencode@microsoft.com)。
 
-* [Office 365 API 平台概觀](https://msdn.microsoft.com/office/office365/howto/platform-development-overview)
-* [Office 365 API 入門](http://dev.office.com/getting-started/office365apis)
-* [Microsoft Graph 概觀](http://graph.microsoft.io/)
-* [其他 Microsoft Graph connect 範例](https://github.com/officedev?utf8=%E2%9C%93&query=Microsoft-Graph-Connect)
-* [Office 365 API 入門專案和程式碼範例](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
-* [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)
+## <a name="questions-and-comments"></a>問題和建議
 
-## 著作權
-Copyright (c) 2015 Microsoft.著作權所有，並保留一切權利。
+我們很樂於收到您對於 Microsoft Graph Ruby on Rails Connect 範例的意見反應。您可以在此儲存機制的[問題](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues)區段中，將您的問題及建議傳送給我們。
+
+我們很重視您的意見。請透過 [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph) 與我們連絡。以 [MicrosoftGraph] 標記您的問題。
+
+## <a name="see-also"></a>請參閱
+
+- [其他 Microsoft Graph Connect 範例](https://github.com/MicrosoftGraph?utf8=%E2%9C%93&query=-Connect)
+- [Microsoft Graph 開發人員中心](http://graph.microsoft.io)
+- [Office UI 結構](https://github.com/OfficeDev/Office-UI-Fabric)
+
+## <a name="copyright"></a>著作權
+Copyright (c) 2016 Microsoft.著作權所有，並保留一切權利。
