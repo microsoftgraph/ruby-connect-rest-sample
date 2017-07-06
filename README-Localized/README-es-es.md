@@ -1,74 +1,95 @@
-## Ejemplo Connect de Ruby para Office 365 con Microsoft Graph
+## <a name="microsoft-graph-ruby-on-rails-connect-sample"></a>Ejemplo de Microsoft Graph Ruby on Rails Connect
 
-[ ![Estado de la compilación](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)  
+[![Estado de compilación](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
 
-Conectarse a Office 365 es el primer paso que debe realizar cada aplicación para empezar a trabajar con los datos y servicios de Office 365. Este ejemplo muestra cómo conectar y cómo llamar después a una API mediante Microsoft Graph (anteriormente denominada API unificada de Office 365), y usa la interfaz de usuario Fabric de Office para crear una experiencia de Office 365.
+Utilizar Microsoft Graph para tener acceso a los recursos de la cuenta de Microsoft del usuario desde una aplicación web Ruby on Rails. Este ejemplo utiliza llamadas REST directamente al extremo de Microsoft Graph para trabajar con recursos del usuario: en este caso, para enviar un correo electrónico como el usuario.
 
-Consulte [Introducción a las API de Office 365](http://dev.office.com/getting-started/office365apis?platform=option-ruby#setup), que simplifica el registro para que este ejemplo se ejecute más rápidamente.
+El ejemplo usa OmniAuth middleware para autenticarse en el extremo de Azure AD v2.0. El extremo de Azure AD v2.0 permite a los desarrolladores escribir un flujo de código simple que trata la autenticación tanto para las cuentas profesional o educativa (Azure Active Directory) como personales (Microsoft) de los usuarios, incluidas las cuentas de Office 365, Outlook.com y OneDrive.
 
-![Captura de pantalla del ejemplo Connect de Ruby para Office 365](../readme-images/O365-Ruby-Microsoft-Graph-Connect.png)  
+El ejemplo también usa la UI de Office Fabric para aplicar estilos y formatos a la experiencia del usuario.
 
-> Nota: Para realizar un análisis exhaustivo del código, consulte [Llamadas a Microsoft Graph en una aplicación de Ruby](https://graph.microsoft.io/es-es/docs/platform/ruby).
+![Captura de pantalla del ejemplo Microsoft Ruby on Rails Connect ](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
-## Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
-Para usar el ejemplo Connect de Ruby para Office 365, se necesita lo siguiente.
+Para usar este ejemplo de código, se requiere lo siguiente:
 
-* Ruby 2.1 para ejecutar el ejemplo en un servidor de desarrollo.
-* Marco Rails (el ejemplo se probó con Rails 4.2).
-* Administrador de dependencias Bundler.
-* Interfaz de servidor web Rack para Ruby.
-* Una cuenta de Office 365. Puede registrarse en [una suscripción a Office 365 Developer](https://aka.ms/devprogramsignup), que incluye los recursos que necesita para comenzar a crear aplicaciones de Office 365.
+- Ruby 2.1 para ejecutar el ejemplo en un servidor de desarrollo.
+- Marco Rails (el ejemplo se probó con Rails 4.2).
+- Administrador de dependencias Bundler.
+- Interfaz de servidor web Rack para Ruby.
+- Una [cuenta de Microsoft](https://www.outlook.com/) o una [cuenta de Office 365 para empresas](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
-    > **Nota:**<br /> 
-	Si ya dispone de una suscripción, el vínculo anterior le dirige a una página con el mensaje *No se puede agregar a su cuenta actual*. En ese caso, use una cuenta de su suscripción actual a Office 365.<br /><br /> 
-	Si ya inició sesión en Office 365, el botón de inicio de sesión del vínculo anterior muestra el mensaje *No podemos procesar su solicitud*. En ese caso, cierre sesión en Office 365 en esa misma página y vuelva a iniciarla.
-* Un inquilino de Microsoft Azure para registrar la aplicación. Azure Active Directory (AD) proporciona servicios de identidad que las aplicaciones usan para autenticación y autorización. Se puede adquirir una suscripción de prueba en [Microsoft Azure](https://account.windowsazure.com/SignUp).
+## <a name="register-the-application"></a>Registrar la aplicación
 
-    > **Importante:**<br />
-	También necesita asegurarse de que su suscripción a Azure está enlazada a su inquilino de Office 365. Para ello, consulte la publicación del blog del equipo de Active Directory, [Crear y administrar varios directorios de Windows Azure Active Directory](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). La sección **Agregar un nuevo directorio** le explicará cómo hacerlo. Para obtener más información, también puede consultar [Configurar el entorno de desarrollo de Office 365](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) y la sección **Asociar su cuenta de Office 365 con Azure AD para crear y administrar aplicaciones**.
-* Los valores de [```client ID```](app/Constants.rb#L29), [```key```](app/Constants.rb#L30) y [```reply URL```](app/Constants.rb#L31) de una aplicación registrada en Azure. A esta aplicación de ejemplo se le debe conceder el permiso **Enviar correo como usuario** para **Microsoft Graph**. Para obtener información detallada, consulte [Registrar su aplicación web basada en un explorador con el Portal de administración de Azure](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) y [Conceder los permisos adecuados a la aplicación Connect](https://github.com/OfficeDev/O365-Ruby-Microsoft-Graph-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
+Registre una aplicación en el Portal de registro de aplicaciones de Microsoft. Esta acción generará el ID y la contraseña de aplicación que usará para configurar la aplicación para la autenticación.
 
-     > **Nota:**<br />
-	 Durante el proceso de registro de la aplicación, asegúrese de especificar *http://localhost:3000/auth/azureactivedirectory/callback* como **Dirección URL de inicio de sesión**.
+1. Inicie sesión en el [Portal de registro de aplicaciones de Microsoft](https://apps.dev.microsoft.com/) mediante su cuenta personal, profesional o educativa.
 
-## Configurar y ejecutar la aplicación
+2. Seleccione **Agregar una aplicación**.
 
-1. Si todavía no tiene Bundler y Rack, puede instalarlos con el siguiente comando.
+3. Escriba un nombre para la aplicación y seleccione **Crear aplicación**.
 
-	```
-	gem install bundler rack
-	```
-2. En el archivo [environment.rb](config/environment.rb) haga lo siguiente.
-    1. Reemplace *ENTER_YOUR_CLIENT_ID* por el identificador de cliente de la aplicación registrada en Azure.
-    2. Reemplace *ENTER_YOUR_SECRET* por la clave de la aplicación registrada en Azure.
-    3. Reemplace *ENTER_YOUR_TENANT* por su inquilino, en el formulario *your_tenant.onmicrosoft.com*.
+    Se muestra la página de registro, indicando las propiedades de la aplicación.
+
+4. Copie el identificador de la aplicación. Se trata del identificador único para su aplicación.
+
+5. En **Secretos de aplicación**, seleccione **Generar nueva contraseña**. Copie el secreto de aplicación del cuadro de diálogo **Nueva contraseña generada**.
+
+    Deberá usar el ID y el secreto de aplicación para configurar la aplicación.
+
+6. En **Plataformas**, elija **Agregar plataforma** > **Web**.
+
+7. Asegúrese de que la casilla **Permitir flujo implícito** está seleccionada y escriba *http://localhost:3000/auth/microsoft_v2_auth/callback* como URI de redireccionamiento.
+
+    La opción **Permitir flujo implícito**habilita el flujo híbrido de OpenID Connect. Durante la autenticación, esto permite que la aplicación reciba tanto la información de inicio de sesión (el **id_token**) como los artefactos (en este caso, un código de autorización) que la aplicación usa para obtener un token de acceso.
+
+    El URI de redireccionamiento *http://localhost:3000/auth/microsoft_v2_auth/callback* es el valor con el que el middleware de OmniAuth se ha configurado para usar una vez que haya procesado la solicitud de autenticación.
+
+8. Seleccione **Guardar**.
+
+## <a name="build-and-run-the-sample"></a>Compilar y ejecutar el ejemplo
+
+1. Descargar o clonar el ejemplo y abrirlo en el editor de su elección.
+1. Si todavía no tiene Bundler ni Rack, puede instalarlos con el siguiente comando.
+
+    ```
+    gem install bundler rack
+    ```
+2. En el archivo [config/environment.rb](config/environment.rb) realice lo siguiente:
+    1. Reemplace *ENTER_YOUR_CLIENT_ID* por el identificador de su aplicación registrada.
+    2. Reemplace *ENTER_YOUR_SECRET* por el secreto de su aplicación registrada.
+
 3. Instale la aplicación Rails y las dependencias con el siguiente comando.
 
-	```
-	bundle install
-	```
+    ```
+    bundle install
+    ```
 4. Para iniciar la aplicación Rails, escriba el siguiente comando.
 
-	```
-	rackup -p 3000
-	```
+    ```
+    rackup -p 3000
+    ```
 5. Vaya a ```http://localhost:3000``` en el explorador web.
 
-## Preguntas y comentarios
+<a name="contributing"></a>
+## <a name="contributing"></a>Colaboradores ##
 
-Nos encantaría recibir sus comentarios acerca del ejemplo Connect de Ruby para Office 365. Puede enviarnos sus preguntas y sugerencias a través de la sección [Problemas](https://github.com/OfficeDev/O365-Ruby-Microsoft-Graph-Connect/issues) de este repositorio.
+Si le gustaría contribuir a este ejemplo, consulte [CONTRIBUTING.MD](/CONTRIBUTING.md).
 
-Las preguntas generales sobre desarrollo en Office 365 deben publicarse en [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Asegúrese de que sus preguntas o comentarios se etiquetan con [Office365] y [API].
-  
-## Recursos adicionales
+Este proyecto ha adoptado el [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) (Código de conducta de código abierto de Microsoft). Para obtener más información, consulte las [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) (Preguntas más frecuentes del código de conducta) o póngase en contacto con [opencode@microsoft.com](mailto:opencode@microsoft.com) con otras preguntas o comentarios.
 
-* [Información general sobre la plataforma de las API de Office 365](https://msdn.microsoft.com/office/office365/howto/platform-development-overview)
-* [Introducción a las API de Office 365](http://dev.office.com/getting-started/office365apis)
-* [Información general de Microsoft Graph](http://graph.microsoft.io/)
-* [Otros ejemplos Connect de Microsoft Graph](https://github.com/officedev?utf8=%E2%9C%93&query=Microsoft-Graph-Connect)
-* [Proyectos de inicio de las API de Office 365 y ejemplos de código](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
-* [Interfaz de usuario Fabric de Office](https://github.com/OfficeDev/Office-UI-Fabric)
+## <a name="questions-and-comments"></a>Preguntas y comentarios
 
-## Copyright
-Copyright (c) 2015 Microsoft. Todos los derechos reservados.
+Nos encantaría recibir sus comentarios acerca del ejemplo de Microsoft Graph Ruby on Rails Connect. Puede enviarnos sus preguntas y sugerencias a través de la sección [Problemas](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues) de este repositorio.
+
+Sus comentarios son importantes para nosotros. Conecte con nosotros en [Desbordamiento de pila](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Etiquete sus preguntas con [MicrosoftGraph].
+
+## <a name="see-also"></a>Vea también
+
+- [Otros ejemplos de Microsoft Graph Connect](https://github.com/MicrosoftGraph?utf8=%E2%9C%93&query=-Connect)
+- [Centro de desarrollo de Microsoft Graph](http://graph.microsoft.io)
+- [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)
+
+## <a name="copyright"></a>Copyright
+Copyright (c) 2016 Microsoft. Todos los derechos reservados.
