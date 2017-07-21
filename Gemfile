@@ -46,10 +46,7 @@ group :development, :test do
 end
 
 # Authentication resources
-gem 'omniauth'
-gem 'omniauth-oauth2'
-#gem 'omniauth-microsoft_v2_auth'
-gem 'omniauth-microsoft_v2_auth', path: './omniauth-microsoft_v2_auth'
+gem 'omniauth-microsoft_v2_auth', :git => "git://github.com/cbales/omniauth-microsoft_graph"
 
 # On Windows systems we need tzinfo-data
 gem 'tzinfo-data'
