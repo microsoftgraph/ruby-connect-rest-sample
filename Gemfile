@@ -20,6 +20,8 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'rubocop', '0.34.2', :require => false
 end
 
 # Authentication resources
@@ -27,5 +29,3 @@ gem 'omniauth-microsoft_v2_auth', :git => "git://github.com/cbales/omniauth-micr
 
 # On Windows systems we need tzinfo-data
 gem 'tzinfo-data'
-
-gem 'rubocop', '0.34.2'
