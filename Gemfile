@@ -15,20 +15,21 @@ gem 'turbolinks', '5'
 gem 'sdoc', group: :doc
 
 group :development, :test do
-  gem 'listen'
-
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
   # console
-  gem 'byebug'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+
+  gem 'rubocop', '0.50.0', require: false
 
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'rubocop', '0.50.0', require: false
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '>= 3.3.0'
 end
 
 # Authentication resources
@@ -36,4 +37,4 @@ omniauth_src = 'git://github.com/cbales/omniauth-microsoft_graph'
 gem 'omniauth-microsoft_v2_auth', git: omniauth_src
 
 # On Windows systems we need tzinfo-data
-gem 'tzinfo-data'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
