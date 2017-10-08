@@ -12,3 +12,6 @@ Lint/HandleExceptions:
   Exclude:
     - 'bin/rails'
     - 'bin/rake'
+
+Style/FileName:
+  Enabled: false

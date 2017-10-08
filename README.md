@@ -14,10 +14,8 @@ The sample also uses the Office Fabric UI for styling and formatting the user ex
 
 To use this sample, the following are required:
 
-- Ruby 2.1 to run the sample on a development server.
-- Rails framework (the sample has been tested on Rails 4.2).
+- Ruby 2.1.9 to run the sample on a development server (a `.ruby-version` file is supplied for Ruby version managers like [rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version), [chruby](https://github.com/postmodern/chruby#auto-switching), and [rvm](https://rvm.io/workflow/projects)).
 - Bundler dependency manager.
-- Rack web server interface for Ruby.
 - A [Microsoft account](https://www.outlook.com/) or an [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## Register the application
@@ -51,10 +49,10 @@ Register an app on the Microsoft App Registration Portal. This generates the app
 ## Build and run the sample
 
 1. Download or clone the sample and open it in the editor of your choice.
-1. If you don't already have bundler and rack, you can install them with the following command.
+1. If you don't already have [bundler](http://bundler.io/), you can install it with the following command.
 
 	```
-	gem install bundler rack
+	gem install bundler
 	```
 2. In the [config/environment.rb](config/environment.rb) file do the following.
     1. Replace *ENTER_YOUR_CLIENT_ID* with the app ID of your registered  application.

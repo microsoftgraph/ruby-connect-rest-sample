@@ -21,9 +21,10 @@ class PagesController < ApplicationController
 
   # Delegates the browser to the v2 authentication OmniAuth module
   # which takes the user to a sign-in page, if we don't have tokens already
-  # This sample uses an open source OAuth 2.0 library that is compatible with the Azure AD v2.0 endpoint.
+  # This sample uses an open source OAuth 2.0 library that is compatible with
+  # the Azure AD v2.0 endpoint.
   # Microsoft does not provide fixes or direct support for this library.
-  # Refer to the library’s repository to file issues or for other support.
+  # Refer to the library's repository to file issues or for other support.
   # For more information about auth libraries see: https://azure.microsoft.com/documentation/articles/active-directory-v2-libraries/
   # omniauth-oauth2 repo:  https://github.com/intridea/omniauth-oauth2
 
@@ -34,7 +35,7 @@ class PagesController < ApplicationController
   # If the user had to sign-in, the browser will redirect to this callback
   # with the authorization tokens attached
 
-  def callback
+  def callback # rubocop:disable AbcSize
     # Access the authentication hash for omniauth
     # and extract the auth token, user name, and email
     data = request.env['omniauth.auth']
