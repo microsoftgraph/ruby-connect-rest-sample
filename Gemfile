@@ -21,11 +21,12 @@ group :development, :test do
   # background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'rubocop', '0.34.2', :require => false
+  gem 'rubocop', '0.34.2', require: false
 end
 
 # Authentication resources
-gem 'omniauth-microsoft_v2_auth', :git => "git://github.com/cbales/omniauth-microsoft_graph"
+omniauth_src = 'git://github.com/cbales/omniauth-microsoft_graph'
+gem 'omniauth-microsoft_v2_auth', git: omniauth_src
 
 # On Windows systems we need tzinfo-data
 gem 'tzinfo-data'
