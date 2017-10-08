@@ -13,5 +13,5 @@ Lint/HandleExceptions:
     - 'bin/rails'
     - 'bin/rake'
 
-Style/FileName:
+Naming/FileName:
   Enabled: false
