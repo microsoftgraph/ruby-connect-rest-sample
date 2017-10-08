@@ -15,7 +15,6 @@ The sample also uses the Office Fabric UI for styling and formatting the user ex
 To use this sample, the following are required:
 
 - Ruby 2.1.9 to run the sample on a development server (a `.ruby-version` file is supplied for Ruby version managers like [rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version), [chruby](https://github.com/postmodern/chruby#auto-switching), and [rvm](https://rvm.io/workflow/projects)).
-- Rails framework (the sample has been tested on Rails 4.2).
 - Bundler dependency manager.
 - A [Microsoft account](https://www.outlook.com/) or an [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
