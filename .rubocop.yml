@@ -15,3 +15,9 @@ Lint/HandleExceptions:
 
 Naming/FileName:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
