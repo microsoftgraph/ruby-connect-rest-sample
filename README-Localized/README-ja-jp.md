@@ -14,10 +14,8 @@ Microsoft Graph を使用して、Ruby on Rails の Web アプリケーション
 
 このサンプルを使用するには、以下が必要です。
 
-- 開発サーバー上でサンプルを実行する Ruby 2.1。
-- Rails フレームワーク (このサンプルは Rails 4.2 でテストされています)。
+- 開発サーバー上でサンプルを実行する Ruby 2.4.2。
 - Bundler 依存関係マネージャー。
-- Ruby 用の Rack Web サーバー インターフェイス。
 - [Microsoft アカウント](https://www.outlook.com/)または [ビジネス向けの Office 365 アカウント](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## <a name="register-the-application"></a>アプリケーションの登録

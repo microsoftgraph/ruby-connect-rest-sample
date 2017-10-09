@@ -14,10 +14,8 @@
 
 若要使用此範例，需要有下列各項：
 
-- Ruby 2.1 用以在開發伺服器上執行範例。
-- Rails 架構 (已在 Rails 4.2 上測試此範例)。
+- Ruby 2.4.2 用以在開發伺服器上執行範例。
 - Bundler 相依性管理員。
-- 適用於 Ruby 的 Rack Web 伺服器介面。
 - [Microsoft 帳戶](https://www.outlook.com/)或[ 商務用 Office 365 帳戶](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## <a name="register-the-application"></a>註冊應用程式

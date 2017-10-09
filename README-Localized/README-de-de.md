@@ -14,10 +14,8 @@ Im Beispiel wird auch die Office-Fabric-UI zum Entwerfen und Formatieren der Ben
 
 Um dieses Beispiel verwenden zu können, ist Folgendes erforderlich:
 
-- Ruby 2.1 zum Ausführen des Beispiels auf einem Entwicklungsserver.
-- Rails-Framework (das Beispiel wurde auf Rails 4.2 getestet).
+- Ruby 2.4.2 zum Ausführen des Beispiels auf einem Entwicklungsserver.
 - Bundler Dependency Manager.
-- Rack-Webserveroberfläche für Ruby.
 - Ein [Microsoft-Konto](https://www.outlook.com/) oder ein [Office 365 for Business](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)-Konto.
 
 ## <a name="register-the-application"></a>Registrieren der App

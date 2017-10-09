@@ -12,3 +12,12 @@ Lint/HandleExceptions:
   Exclude:
     - 'bin/rails'
     - 'bin/rake'
+
+Naming/FileName:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false

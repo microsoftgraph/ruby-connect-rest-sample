@@ -14,10 +14,8 @@ O exemplo também usa a interface do usuário do Office Fabric para definir o es
 
 Para utilizar este exemplo, são necessários:
 
-- Ruby 2.1 para executar o exemplo em um servidor de desenvolvimento.
-- Estrutura do Rails (o exemplo foi testado nos Rails 4.2).
+- Ruby 2.4.2 para executar o exemplo em um servidor de desenvolvimento.
 - Gerenciador de dependências do Bundler.
-- Interface de servidor Web Rack para Ruby.
 - Uma [Conta da Microsoft](https://www.outlook.com/) ou uma [Conta do Office 365 para empresas](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## <a name="register-the-application"></a>Registrar o aplicativo

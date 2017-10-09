@@ -14,10 +14,8 @@
 
 Чтобы воспользоваться этим примером, необходимо следующее:
 
-- Ruby 2.1 для запуска примера на сервере разработки;
-- платформа Rails (пример протестирован на платформе Rails 4.2);
+- Ruby 2.4.2 для запуска примера на сервере разработки;
 - диспетчер зависимостей Bundler;
-- интерфейс веб-сервера для Ruby (Rack);
 - [учетная запись Майкрософт](https://www.outlook.com/) или [учетная запись Office 365 для бизнеса](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account).
 
 ## <a name="register-the-application"></a>Регистрация приложения
