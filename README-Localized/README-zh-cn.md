@@ -14,10 +14,8 @@
 
 必须符合以下条件才能使用此示例：
 
-- Ruby 2.1，用于在开发服务器上运行该示例。
-- Rails 框架（该示例已经过 Rails 4.2 测试）。
+- Ruby 2.4.2，用于在开发服务器上运行该示例。
 - 捆绑程序依存关系管理器
-- 用于 Ruby 的 Rack Web 服务器界面。
 - 一个 [Microsoft 帐户](https://www.outlook.com/) 或 [Office 365 商业版帐户](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## <a name="register-the-application"></a>注册应用程序

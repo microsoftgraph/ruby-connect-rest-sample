@@ -14,10 +14,8 @@ L’exemple utilise également la structure d’interface utilisateur Office pou
 
 Pour utiliser cet exemple, les éléments suivants sont requis :
 
-- Ruby 2.1 pour exécuter l’exemple sur un serveur de développement.
-- La structure Rails (l’exemple a été testé sur Rails 4.2).
+- Ruby 2.4.2 pour exécuter l’exemple sur un serveur de développement.
 - Le gestionnaire de dépendances Bundler.
-- L’interface de serveur web Rack pour Ruby.
 - Un [compte Microsoft](https://www.outlook.com/) ou un [compte Office 365 pour les entreprises](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## <a name="register-the-application"></a>Inscription de l’application
