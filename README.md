@@ -26,11 +26,11 @@ Register an app on the Microsoft App Registration Portal. This generates the app
 
 2. Choose **Add an app**.
 
-3. Enter a name for the app, and choose **Create application**.
+3. Enter a name for the app, and choose **Create**.
 
 	The registration page displays, listing the properties of your app.
 
-4. Copy the application ID. This is the unique identifier for your app.
+4. Copy the `Application Id`. This is the unique identifier for your app.
 
 5. Under **Application Secrets**, choose **Generate New Password**. Copy the app secret from the **New password generated** dialog.
 
