@@ -8,17 +8,17 @@ Microsoft Graph を使用して、Ruby on Rails の Web アプリケーション
 
 サンプルでは、ユーザー エクスペリエンスのスタイル設定と書式設定に Office Fabric UI も使用します。
 
-![Microsoft Ruby on Rails Connect サンプルのスクリーンショット](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
+![Microsoft Ruby on Rails Connect サンプルのスクリーンショット](/readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
 ## <a name="prerequisites"></a>前提条件
 
 このサンプルを使用するには、以下が必要です。
 
-- 開発サーバー上でサンプルを実行する Ruby 2.4.2。
+- 開発サーバー上のサンプルを実行するための Ruby 2.4.2 (`.ruby-version` ファイルは、[rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version)、[chruby](https://github.com/postmodern/chruby#auto-switching)、[rvm](https://rvm.io/workflow/projects) などの Ruby バージョン マネージャーに対して提供されます)。
 - Bundler 依存関係マネージャー。
-- [Microsoft アカウント](https://www.outlook.com/)または [ビジネス向けの Office 365 アカウント](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
+- [Microsoft アカウント](https://www.outlook.com/)または[ビジネス向けの Office 365 アカウント](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
-## <a name="register-the-application"></a>アプリケーションの登録
+## <a name="register-the-application"></a>アプリケーションを登録する
 
 Microsoft アプリ登録ポータルでアプリを登録します。これにより、認証するアプリの構成に使用するアプリ ID とパスワードが生成されます。
 
@@ -38,23 +38,23 @@ Microsoft アプリ登録ポータルでアプリを登録します。これに�
 
 6. **[プラットフォーム]** で、**[プラットフォームの追加]** > **[Web]** の順に選択します。
 
-7. **[暗黙的フローを許可する]** のチェック ボックスが選択されていることを確認して、リダイレクト URI として「*http://localhost:3000/auth/microsoft_v2_auth/callback*」と入力します。
+7. **[暗黙的フローを許可する]** のチェック ボックスが選択されていることを確認して、リダイレクト URI として「*http://localhost:3000/auth/microsoft_v2_auth/callback*」を入力します。
 
     **[暗黙的フローを許可する]** オプションにより、OpenID Connect ハイブリッド フローが有効になります。これにより、認証時にアプリはサインイン情報 (**id_token**) と成果物 (この場合は認証コード) の両方を受け取れるようになり、アプリはアクセス トークンを取得するときにこれらを使用できます。
 
-    リダイレクト URI *http://localhost:3000/auth/microsoft_v2_auth/callback* は、認証要求が処理されたときに OmniAuth ミドルウェアが使用するように構成される値です。
+    リダイレクト URI *http://localhost:3000/auth/microsoft_v2_auth/callback* は、認証要求が処理されたときに OmniAuth ミドルウェアで使用するように構成される値です。
 
 8. **[保存]** を選択します。
 
 ## <a name="build-and-run-the-sample"></a>サンプルのビルドと実行
 
 1. サンプルをダウンロードまたは複製し、任意のエディターで開きます。
-1. Bundler と Rack がない場合は、次のコマンドでインストールできます。
+1. [Bundler](http://bundler.io/) がない場合は、次のコマンドでインストールできます。
 
     ```
-    gem install bundler rack
+    gem install bundler
     ```
-2. [config/environment.rb](config/environment.rb) ファイルで、以下を実行します。
+2. [config/environment.rb](config/environment.rb) ファイルで、次を実行します。
     1. *ENTER_YOUR_CLIENT_ID* を登録済みのアプリケーションのアプリ ID と置き換えます。
     2. *ENTER_YOUR_SECRET* を登録済みのアプリケーションのアプリ シークレットと置き換えます。
 
@@ -81,7 +81,7 @@ Microsoft アプリ登録ポータルでアプリを登録します。これに�
 
 Microsoft Graph Ruby on Rails Connect のサンプルに関するフィードバックをお寄せください。質問や提案につきましては、このリポジトリの「[問題](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues)」セクションで送信できます。
 
-お客様からのフィードバックを重視しています。[スタック オーバーフロー](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph)でご連絡いただけます。ご質問には [MicrosoftGraph] のタグを付けてください。
+お客様からのフィードバックは私たちにとって重要です。[スタック オーバーフロー](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph)でご連絡いただけます。ご質問には [MicrosoftGraph] のタグを付けてください。
 
 ## <a name="see-also"></a>関連項目
 

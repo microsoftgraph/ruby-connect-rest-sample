@@ -8,13 +8,13 @@
 
 В примере также используется Office Fabric для оформления и форматирования элементов пользовательского интерфейса.
 
-![Снимок экрана с приложением Microsoft Ruby on Rails Connect](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
+![Снимок экрана с приложением Microsoft Ruby on Rails Connect](/readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
 ## <a name="prerequisites"></a>Необходимые компоненты
 
-Чтобы воспользоваться этим примером, необходимо следующее:
+Чтобы воспользоваться этим приложением, необходимо следующее:
 
-- Ruby 2.4.2 для запуска примера на сервере разработки;
+- Ruby 2.4.2 для запуска приложения на сервере разработки (файл `.ruby-version` предоставлен для менеджеров версий Ruby, таких как [rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version), [chruby](https://github.com/postmodern/chruby#auto-switching) и [rvm](https://rvm.io/workflow/projects));
 - диспетчер зависимостей Bundler;
 - [учетная запись Майкрософт](https://www.outlook.com/) или [учетная запись Office 365 для бизнеса](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account).
 
@@ -49,12 +49,12 @@
 ## <a name="build-and-run-the-sample"></a>Сборка и запуск примера
 
 1. Скачайте или клонируйте пример и откройте его в удобном для себя редакторе.
-1. Если у вас еще нет Bundler и Rack, их можно установить с помощью приведенной ниже команды.
+1. Если у вас еще нет [bundler](http://bundler.io/), можете установить его с помощью приведенной ниже команды.
 
     ```
-    gem install bundler rack
+    gem install bundler
     ```
-2. В файле [config/environment.rb](config/environment.rb) выполните указанные ниже действия.
+2. Выполните указанные ниже действия в файле [config/environment.rb](config/environment.rb).
     1. Замените текст *ENTER_YOUR_CLIENT_ID* на идентификатор приложения для зарегистрированного приложения.
     2. Замените текст *ENTER_YOUR_SECRET* на секрет для зарегистрированного приложения.
 
@@ -81,7 +81,7 @@
 
 Мы будем рады получить от вас отзывы о примере Ruby on Rails Connect на базе Microsoft Graph. Вы можете отправлять нам вопросы и предложения на вкладке [Issues](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues) (Вопросы) этого репозитория.
 
-Ваше мнение важно для нас. Для связи с нами используйте сайт [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Помечайте свои вопросы тегом [MicrosoftGraph].
+Ваши отзывы важны для нас. Для связи с нами используйте сайт [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Помечайте свои вопросы тегом [MicrosoftGraph].
 
 ## <a name="see-also"></a>См. также
 

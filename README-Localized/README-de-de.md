@@ -8,13 +8,13 @@ Im Beispiel wird die OmniAuth-Middleware zur Authentifizierung beim Azure AD v2.
 
 Im Beispiel wird auch die Office-Fabric-UI zum Entwerfen und Formatieren der Benutzeroberfläche verwendet.
 
-![Screenshot des Microsoft Ruby on Rails Connect-Beispiels](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
+![Screenshot des Microsoft Ruby on Rails Connect-Beispiels](/readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 Um dieses Beispiel verwenden zu können, ist Folgendes erforderlich:
 
-- Ruby 2.4.2 zum Ausführen des Beispiels auf einem Entwicklungsserver.
+- Ruby 2.4.2 zum Ausführen des Beispiels auf einem Entwicklungsserver (eine `.ruby-version`-Datei ist für Manager von Ruby-Versionen wie [rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version), [chruby](https://github.com/postmodern/chruby#auto-switching), und [rvm](https://rvm.io/workflow/projects) angegeben).
 - Bundler Dependency Manager.
 - Ein [Microsoft-Konto](https://www.outlook.com/) oder ein [Office 365 for Business](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)-Konto.
 
@@ -49,10 +49,10 @@ Registrieren Sie eine App im Microsoft App-Registrierungsportal. Dadurch werden 
 ## <a name="build-and-run-the-sample"></a>Erstellen und Ausführen des Beispiels
 
 1. Laden Sie das Beispiel herunter, oder klonen Sie es, und öffnen Sie es dann im gewünschten Editor.
-1. Wenn Sie weder über einen Bundler noch über ein Rack verfügen, können Sie sie mithilfe des folgenden Befehls installieren.
+1. Wenn Sie über keinen [Bundler](http://bundler.io/) verfügen, können Sie ihn mithilfe des folgenden Befehls installieren.
 
     ```
-    gem install bundler rack
+    gem install bundler
     ```
 2. Nehmen Sie in der Datei [config/environment.rb](config/environment.rb) die folgende Aktion vor.
     1. Ersetzen Sie *ENTER_YOUR_CLIENT_ID* durch die App-ID Ihrer registrierten Anwendung.

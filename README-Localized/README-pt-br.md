@@ -1,6 +1,6 @@
 ## <a name="microsoft-graph-ruby-on-rails-connect-sample"></a>Exemplo de conexão com o Microsoft Graph Ruby on Rails
 
-[![Status da Compilação](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
+[![Status do build](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
 
 Utilize o Microsoft Graph para acessar os recursos de conta da Microsoft de um usuário a partir de um aplicativo Web do Ruby on Rails. Este exemplo utiliza chamadas REST diretamente para o ponto de extremidade do Microsoft Graph para trabalhar com os recursos do usuário. Neste caso, para enviar um email como o usuário.
 
@@ -8,15 +8,15 @@ O exemplo usa o middleware de OmniAuth para autenticar no ponto de extremidade d
 
 O exemplo também usa a interface do usuário do Office Fabric para definir o estilo e a formatação da experiência do usuário.
 
-![Captura de tela do exemplo de conexão com o Microsoft Graph para Ruby on Rails](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
+![Captura de tela do exemplo de conexão com o Microsoft Graph para Ruby on Rails](/readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Para utilizar este exemplo, são necessários:
 
-- Ruby 2.4.2 para executar o exemplo em um servidor de desenvolvimento.
+- Ruby 2.4.2 para executar o exemplo em um servidor de desenvolvimento (um arquivo `.ruby-version` é fornecido para gerenciadores de versão do Ruby, como [rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version), [chruby](https://github.com/postmodern/chruby#auto-switching) e [rvm](https://rvm.io/workflow/projects)).
 - Gerenciador de dependências do Bundler.
-- Uma [Conta da Microsoft](https://www.outlook.com/) ou uma [Conta do Office 365 para empresas](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
+- Uma [conta da Microsoft](https://www.outlook.com/) ou uma [conta do Office 365 para empresas](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## <a name="register-the-application"></a>Registrar o aplicativo
 
@@ -49,10 +49,10 @@ Registre um aplicativo no Portal de Registro de Aplicativos da Microsoft. Isso g
 ## <a name="build-and-run-the-sample"></a>Criar e executar o exemplo
 
 1. Baixe ou clone o exemplo e abra-o no editor de sua escolha.
-1. Caso ainda não tenha os recursos Bundler e Rack, você pode instalá-los com o seguinte comando.
+1. Caso você ainda não tenha o [Bundler](http://bundler.io/), é possível instalá-lo com o comando seguinte.
 
     ```
-    gem install bundler rack
+    gem install bundler
     ```
 2. No arquivo [config/environment.rb](config/environment.rb), faça o seguinte.
     1. Substitua *ENTER_YOUR_CLIENT_ID* pela ID do aplicativo registrado.
@@ -81,7 +81,7 @@ Este projeto adotou o [Código de Conduta do Código Aberto da Microsoft](https:
 
 Adoraríamos receber seus comentários sobre o projeto exemplo de Conexão do Microsoft Graph Ruby on Rails. Você pode nos enviar suas perguntas e sugestões por meio da seção [Issues](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues) deste repositório.
 
-Seus comentários são importantes para nós. Junte-se a nós na página [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Marque suas perguntas com [MicrosoftGraph].
+Os seus comentários são importantes para nós. Junte-se a nós na página [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Marque suas perguntas com [MicrosoftGraph].
 
 ## <a name="see-also"></a>Ver também
 

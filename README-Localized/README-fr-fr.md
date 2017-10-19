@@ -8,15 +8,15 @@ L’exemple utilise l’intergiciel OmniAuth pour l’authentification auprès d
 
 L’exemple utilise également la structure d’interface utilisateur Office pour l’application d’un style à l’expérience utilisateur et sa mise en forme.
 
-![Capture d’écran de l’exemple de connexion Microsoft Ruby on Rails](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
+![Capture d’écran de l’exemple de connexion Microsoft Ruby on Rails](/readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cet exemple, les éléments suivants sont requis :
 
-- Ruby 2.4.2 pour exécuter l’exemple sur un serveur de développement.
-- Le gestionnaire de dépendances Bundler.
-- Un [compte Microsoft](https://www.outlook.com/) ou un [compte Office 365 pour les entreprises](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
+- Ruby 2.4.2 pour exécuter l’exemple sur un serveur de développement (un fichier `.ruby-version` est fourni pour les gestionnaires de version Ruby comme [rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version), [chruby](https://github.com/postmodern/chruby#auto-switching) et [rvm](https://rvm.io/workflow/projects)).
+- Gestionnaire de dépendances Bundler.
+- [Compte Microsoft](https://www.outlook.com/) ou [compte Office 365 pour les entreprises](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## <a name="register-the-application"></a>Inscription de l’application
 
@@ -49,10 +49,10 @@ Inscrivez une application sur le portail d’inscription des applications Micros
 ## <a name="build-and-run-the-sample"></a>Création et exécution de l’exemple
 
 1. Téléchargez ou clonez l’exemple et ouvrez-le dans l’éditeur de votre choix.
-1. Si vous n’avez pas encore Bundler et Rack sur votre ordinateur, vous pouvez les installer avec la commande suivante.
+1. Si vous n’avez pas encore [Bundler](http://bundler.io/) sur votre ordinateur, vous pouvez l’installer avec la commande suivante.
 
     ```
-    gem install bundler rack
+    gem install bundler
     ```
 2. Dans le fichier [config/environment.rb](config/environment.rb), suivez les étapes ci-dessous :
     1. Remplacez *ENTER_YOUR_CLIENT_ID* par l’ID de votre application inscrite.
