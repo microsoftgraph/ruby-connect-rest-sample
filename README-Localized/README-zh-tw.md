@@ -8,15 +8,15 @@
 
 此範例也會使用 Office 結構 UI 來對使用者經驗設定樣式和格式。
 
-![Microsoft Ruby on Rails 連線範例螢幕擷取畫面](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
+![Microsoft Ruby on Rails 連線範例螢幕擷取畫面](/readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
 ## <a name="prerequisites"></a>必要條件
 
 若要使用此範例，需要有下列各項：
 
-- Ruby 2.4.2 用以在開發伺服器上執行範例。
+- Ruby 2.4.2 在程式開發伺服器上執行範例 (`.ruby-version` 檔案提供給 Ruby 版本管理員，如[rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version)、[chruby](https://github.com/postmodern/chruby#auto-switching) 和 [rvm](https://rvm.io/workflow/projects))。
 - Bundler 相依性管理員。
-- [Microsoft 帳戶](https://www.outlook.com/)或[ 商務用 Office 365 帳戶](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
+- [Microsoft 帳戶](https://www.outlook.com/)或[商務用 Office 365 帳戶](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## <a name="register-the-application"></a>註冊應用程式
 
@@ -49,10 +49,10 @@
 ## <a name="build-and-run-the-sample"></a>建置及執行範例
 
 1. 下載或複製範例，並在您所選擇的編輯器中開啟。
-1. 如果您還沒有 Bundler 和 Rack，您可以使用下列命令來安裝它們。
+1. 如果您還沒有 [bundler](http://bundler.io/)，可以使用下列命令來安裝。
 
     ```
-    gem install bundler rack
+    gem install bundler
     ```
 2. 在 [config/environment.rb](config/environment.rb) 檔案中執行下列動作。
     1. 用已註冊應用程式的應用程式 ID 來取代 *ENTER_YOUR_CLIENT_ID*。

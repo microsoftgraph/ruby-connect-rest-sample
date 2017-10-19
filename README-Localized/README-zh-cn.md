@@ -1,6 +1,6 @@
 ## <a name="microsoft-graph-ruby-on-rails-connect-sample"></a>Microsoft Graph Ruby on Rails Connect 示例
 
-[![构建状态](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
+[![生成状态](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
 
 使用 Microsoft Graph 访问客户在 Ruby on Rails Web 应用程中的 Microsoft 帐户资源。此示例使用 REST 直接调用 Microsoft Graph 终结点来使用用户资源（在这种情况下，以用户身份发送电子邮件）。
 
@@ -8,15 +8,15 @@
 
 此示例还使用 Office Fabric UI 对用户体验进行样式化和格式化。
 
-![Microsoft Ruby on Rails Connect 示例屏幕截图](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
+![Microsoft Ruby on Rails Connect 示例屏幕截图](/readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
 ## <a name="prerequisites"></a>先决条件
 
-必须符合以下条件才能使用此示例：
+必须符合以下条件，才能使用此示例：
 
-- Ruby 2.4.2，用于在开发服务器上运行该示例。
-- 捆绑程序依存关系管理器
-- 一个 [Microsoft 帐户](https://www.outlook.com/) 或 [Office 365 商业版帐户](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
+- 用于开发服务器上运行示例的 Ruby 2.4.2（为 Ruby 版本管理器（如 [rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version)、[chruby](https://github.com/postmodern/chruby#auto-switching) 和 [rvm](https://rvm.io/workflow/projects)）提供 `.ruby-version` 文件）。
+- 捆绑程序依赖关系管理器。
+- [Microsoft 帐户](https://www.outlook.com/)或 [Office 365 商业版帐户](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
 ## <a name="register-the-application"></a>注册应用程序
 
@@ -38,23 +38,23 @@
 
 6. 在“**平台**”下，选择“**添加平台**” > “**Web**”。
 
-7. 请确保已选中“**允许隐式流**”复选框，输入 *http://localhost:3000/auth/microsoft_v2_auth/callback* 作为重定向 URI。
+7. 请务必选中“允许隐式流”****复选框，并输入“http://localhost:3000/auth/microsoft_v2_auth/callback”**作为重定向 URI。
 
     “**允许隐式流**”选项可启用 OpenID Connect 混合流。在身份验证过程中，这可使应用同时接收登录信息 (**id_token**) 以及应用用来获取访问令牌的项目（在这种情况下，项目为授权代码）。
 
-    重定向 URL *http://localhost:3000/auth/microsoft_v2_auth/callback* 是 OmniAuth 中间件处理身份验证请求后进行配置所要使用的值。
+    重定向 URI *http://localhost:3000/auth/microsoft_v2_auth/callback* 是 OmniAuth 中间件被配置为在处理身份验证请求后使用的值。
 
 8. 选择“**保存**”。
 
 ## <a name="build-and-run-the-sample"></a>生成和运行示例
 
-1. 下载或复制示例，并在你选择的编辑器中打开。
-1. 如果你还没有捆绑程序和 rack，请使用以下命令进行安装。
+1. 下载或克隆示例，并在选择的编辑器中打开它。
+1. 如果还没有[捆绑程序](http://bundler.io/)，可以运行下列命令进行安装。
 
     ```
-    gem install bundler rack
+    gem install bundler
     ```
-2. 在 [config/environment.rb](config/environment.rb) 文件中执行以下操作。
+2. 在 [config/environment.rb](config/environment.rb) 文件中，执行以下操作。
     1. 用所注册的应用程序的应用 ID 替换 *ENTER_YOUR_CLIENT_ID*。
     2. 用所注册的应用程序的应用密码替换 *ENTER_YOUR_SECRET*。
 
@@ -81,7 +81,7 @@
 
 我们乐意倾听你有关 Microsoft Graph Ruby on Rails Connect 示例的反馈。你可以在该存储库中的 [问题](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues) 部分将问题和建议发送给我们。
 
-你的反馈对我们意义重大。请在 [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph) 上与我们联系。使用 [MicrosoftGraph] 标记出你的问题。
+我们非常重视反馈。请在 [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph) 上与我们联系。使用 [MicrosoftGraph] 标记出你的问题。
 
 ## <a name="see-also"></a>另请参阅
 

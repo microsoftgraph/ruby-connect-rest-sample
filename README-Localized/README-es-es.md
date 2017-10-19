@@ -8,17 +8,17 @@ El ejemplo usa OmniAuth middleware para autenticarse en el extremo de Azure AD v
 
 El ejemplo también usa la UI de Office Fabric para aplicar estilos y formatos a la experiencia del usuario.
 
-![Captura de pantalla del ejemplo Microsoft Ruby on Rails Connect ](../readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
+![Captura de pantalla del ejemplo Microsoft Ruby on Rails Connect ](/readme-images/Microsoft-Graph-Ruby-Connect-UI.png)
 
 ## <a name="prerequisites"></a>Requisitos previos
 
 Para usar este ejemplo de código, se requiere lo siguiente:
 
-- Ruby 2.4.2 para ejecutar el ejemplo en un servidor de desarrollo.
-- Administrador de dependencias Bundler.
-- Una [cuenta de Microsoft](https://www.outlook.com/) o una [cuenta de Office 365 para empresas](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
+- Ruby 2.4.2, para ejecutar el ejemplo en un servidor de desarrollo (para los administradores de versiones de Ruby, como [rbenv](https://github.com/rbenv/rbenv#choosing-the-ruby-version), [chruby](https://github.com/postmodern/chruby#auto-switching) y [rvm](https://rvm.io/workflow/projects), se proporciona un archivo `.ruby-version`)
+- Administrador de dependencias Bundler
+- [Cuenta Microsoft](https://www.outlook.com/) o [cuenta de Office 365 para empresas](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account)
 
-## <a name="register-the-application"></a>Registrar la aplicación
+## <a name="register-the-application"></a>Registro de la aplicación
 
 Registre una aplicación en el Portal de registro de aplicaciones de Microsoft. Esta acción generará el ID y la contraseña de aplicación que usará para configurar la aplicación para la autenticación.
 
@@ -48,11 +48,11 @@ Registre una aplicación en el Portal de registro de aplicaciones de Microsoft. 
 
 ## <a name="build-and-run-the-sample"></a>Compilar y ejecutar el ejemplo
 
-1. Descargar o clonar el ejemplo y abrirlo en el editor de su elección.
-1. Si todavía no tiene Bundler ni Rack, puede instalarlos con el siguiente comando.
+1. Descargue o clone el ejemplo y ábralo en el editor de su elección.
+1. Si todavía no tiene [Bundler](http://bundler.io/), puede instalarlo con el siguiente comando.
 
     ```
-    gem install bundler rack
+    gem install bundler
     ```
 2. En el archivo [config/environment.rb](config/environment.rb) realice lo siguiente:
     1. Reemplace *ENTER_YOUR_CLIENT_ID* por el identificador de su aplicación registrada.
@@ -81,7 +81,7 @@ Este proyecto ha adoptado el [Microsoft Open Source Code of Conduct](https://ope
 
 Nos encantaría recibir sus comentarios acerca del ejemplo de Microsoft Graph Ruby on Rails Connect. Puede enviarnos sus preguntas y sugerencias a través de la sección [Problemas](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues) de este repositorio.
 
-Sus comentarios son importantes para nosotros. Conecte con nosotros en [Desbordamiento de pila](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Etiquete sus preguntas con [MicrosoftGraph].
+Su opinión es importante para nosotros. Conecte con nosotros en [Desbordamiento de pila](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Etiquete sus preguntas con [MicrosoftGraph].
 
 ## <a name="see-also"></a>Vea también
 
