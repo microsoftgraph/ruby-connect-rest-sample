@@ -26,11 +26,11 @@ Microsoft アプリ登録ポータルでアプリを登録します。これに�
 
 2. **[アプリの追加]** を選択します。
 
-3. アプリの名前を入力して、**[アプリケーションの作成]** を選択します。
+3. アプリの名前を入力して、**[作成]** を選択します。
 
     登録ページが表示され、アプリのプロパティが一覧表示されます。
 
-4. アプリケーション ID をコピーします。これは、アプリの一意識別子です。
+4. `Application Id` をコピーします。これは、アプリの一意識別子です。
 
 5. **[アプリケーション シークレット]** で、**[新しいパスワードを生成する]** を選択します。**[新しいパスワードが生成されました]** ダイアログからアプリ シークレットをコピーします。
 
@@ -81,7 +81,7 @@ Microsoft アプリ登録ポータルでアプリを登録します。これに�
 
 Microsoft Graph Ruby on Rails Connect のサンプルに関するフィードバックをお寄せください。質問や提案につきましては、このリポジトリの「[問題](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues)」セクションで送信できます。
 
-お客様からのフィードバックは私たちにとって重要です。[スタック オーバーフロー](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph)でご連絡いただけます。ご質問には [MicrosoftGraph] のタグを付けてください。
+お客様からのフィードバックを重視しています。[スタック オーバーフロー](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph)でご連絡いただけます。ご質問には [MicrosoftGraph] のタグを付けてください。
 
 ## <a name="see-also"></a>関連項目
 

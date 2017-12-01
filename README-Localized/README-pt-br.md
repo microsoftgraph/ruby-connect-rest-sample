@@ -26,11 +26,11 @@ Registre um aplicativo no Portal de Registro de Aplicativos da Microsoft. Isso g
 
 2. Escolha **Adicionar um aplicativo**.
 
-3. Insira um nome para o aplicativo e escolha **Criar aplicativo**.
+3. Insira um nome para o aplicativo e escolha **Criar**.
 
     A página de registro é exibida, listando as propriedades do seu aplicativo.
 
-4. Copie a ID do aplicativo. Esse é o identificador exclusivo do aplicativo.
+4. Copie o `Application Id`. Esse é o identificador exclusivo do aplicativo.
 
 5. Em **Segredos do Aplicativo**, escolha **Gerar Nova Senha**. Copie o segredo do aplicativo da caixa de diálogo **Nova senha gerada**.
 
@@ -81,9 +81,9 @@ Este projeto adotou o [Código de Conduta do Código Aberto da Microsoft](https:
 
 Adoraríamos receber seus comentários sobre o projeto exemplo de Conexão do Microsoft Graph Ruby on Rails. Você pode nos enviar suas perguntas e sugestões por meio da seção [Issues](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues) deste repositório.
 
-Os seus comentários são importantes para nós. Junte-se a nós na página [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Marque suas perguntas com [MicrosoftGraph].
+Seus comentários são importantes para nós. Junte-se a nós na página [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Marque suas perguntas com [MicrosoftGraph].
 
-## <a name="see-also"></a>Ver também
+## <a name="see-also"></a>Veja também
 
 - [Outros exemplos de conexão usando o Microsoft Graph](https://github.com/MicrosoftGraph?utf8=%E2%9C%93&query=-Connect)
 - [Centro de desenvolvimento do Microsoft Graph](http://graph.microsoft.io)

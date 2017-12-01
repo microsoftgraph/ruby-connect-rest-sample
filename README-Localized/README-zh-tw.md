@@ -26,11 +26,11 @@
 
 2. 選擇 [新增應用程式]****。
 
-3. 為應用程式輸入名稱，然後選擇 [建立應用程式]****。
+3. 為應用程式輸入名稱，然後選擇 [建立]****。
 
     [註冊] 頁面隨即顯示，列出您的應用程式的屬性。
 
-4. 複製應用程式 ID。這是您的應用程式的唯一識別碼。
+4. 複製 `Application Id`。這是您的應用程式的唯一識別碼。
 
 5. 在 [應用程式密碼]**** 底下，選擇 [產生新密碼]****。從 [產生的新密碼]**** 對話方塊中複製應用程式密碼。
 
@@ -83,7 +83,7 @@
 
 我們很重視您的意見。請透過 [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph) 與我們連絡。以 [MicrosoftGraph] 標記您的問題。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [其他 Microsoft Graph Connect 範例](https://github.com/MicrosoftGraph?utf8=%E2%9C%93&query=-Connect)
 - [Microsoft Graph 開發人員中心](http://graph.microsoft.io)

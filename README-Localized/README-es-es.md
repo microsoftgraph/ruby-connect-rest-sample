@@ -26,11 +26,11 @@ Registre una aplicación en el Portal de registro de aplicaciones de Microsoft. 
 
 2. Seleccione **Agregar una aplicación**.
 
-3. Escriba un nombre para la aplicación y seleccione **Crear aplicación**.
+3. Escriba un nombre para la aplicación y seleccione **Crear**.
 
-    Se muestra la página de registro, indicando las propiedades de la aplicación.
+    Se mostrará la página de registro, en la que se indicarán las propiedades de la aplicación.
 
-4. Copie el identificador de la aplicación. Se trata del identificador único para su aplicación.
+4. Copie el `Application Id`. Este es el identificador único de la aplicación.
 
 5. En **Secretos de aplicación**, seleccione **Generar nueva contraseña**. Copie el secreto de aplicación del cuadro de diálogo **Nueva contraseña generada**.
 
@@ -83,7 +83,7 @@ Nos encantaría recibir sus comentarios acerca del ejemplo de Microsoft Graph Ru
 
 Su opinión es importante para nosotros. Conecte con nosotros en [Desbordamiento de pila](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph). Etiquete sus preguntas con [MicrosoftGraph].
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Ver también
 
 - [Otros ejemplos de Microsoft Graph Connect](https://github.com/MicrosoftGraph?utf8=%E2%9C%93&query=-Connect)
 - [Centro de desarrollo de Microsoft Graph](http://graph.microsoft.io)

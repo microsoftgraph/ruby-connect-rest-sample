@@ -26,11 +26,11 @@ Inscrivez une application sur le portail d’inscription des applications Micros
 
 2. Choisissez **Ajouter une application**.
 
-3. Entrez un nom pour l’application, puis choisissez **Créer une application**.
+3. Entrez un nom pour l’application, puis choisissez **Créer**.
 
     La page d’inscription s’affiche, répertoriant les propriétés de votre application.
 
-4. Copiez l’ID de l’application. Il s’agit de l’identificateur unique de votre application.
+4. Copie l’`Application Id`. Il s’agit de l’identificateur unique de votre application.
 
 5. Sous **Secrets de l'application**, choisissez **Générer un nouveau mot de passe**. Copiez la question secrète de l’application à partir de la boîte de dialogue **Nouveau mot de passe créé**.
 
