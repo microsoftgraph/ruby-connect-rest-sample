@@ -24,13 +24,13 @@
 
 1. 使用个人或工作或学校帐户登录到 [Microsoft 应用注册门户](https://apps.dev.microsoft.com/)。
 
-2. 选择“**添加应用**”。
+2. 选择“添加应用”****。
 
-3. 输入应用的名称，并选择“**创建应用程序**”。
+3. 输入应用名称，并选择“创建”****。
 
-    将显示注册页，其中列出应用的属性。
+    此时，注册页显示，其中列出了应用属性。
 
-4. 复制应用程序 ID。这是应用的唯一标识符。
+4. 复制 `Application Id`。这是应用的唯一标识符。
 
 5. 在“**应用程序机密**”下，选择“**生成新密码**”。从“**生成的新密码**”对话中复制应用机密。
 
@@ -81,7 +81,7 @@
 
 我们乐意倾听你有关 Microsoft Graph Ruby on Rails Connect 示例的反馈。你可以在该存储库中的 [问题](https://github.com/microsoftgraph/ruby-connect-rest-sample/issues) 部分将问题和建议发送给我们。
 
-我们非常重视反馈。请在 [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph) 上与我们联系。使用 [MicrosoftGraph] 标记出你的问题。
+我们非常重视你的反馈意见。请在 [Stack Overflow](http://stackoverflow.com/questions/tagged/office365+or+microsoftgraph) 上与我们联系。使用 [MicrosoftGraph] 标记出你的问题。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -26,11 +26,11 @@ Registrieren Sie eine App im Microsoft App-Registrierungsportal. Dadurch werden 
 
 2. Klicken Sie auf **App hinzufügen**.
 
-3. Geben Sie einen Namen für die App ein, und wählen Sie **Anwendung erstellen** aus.
+3. Geben Sie einen Namen für die App ein, und wählen Sie **Erstellen**.
 
     Die Registrierungsseite wird angezeigt, und die Eigenschaften der App werden aufgeführt.
 
-4. Kopieren Sie die Anwendungs-ID: Dies ist der eindeutige Bezeichner für Ihre App.
+4. Kopieren Sie die `Application Id`. Dies ist der eindeutige Bezeichner für Ihre App.
 
 5. Wählen Sie unter **Anwendungsgeheimnisse** die Option **Neues Kennwort generieren** aus. Kopieren Sie das Anwendungsgeheimnis aus dem Dialogfeld **Neues Kennwort wurde generiert**.
 
