@@ -17,7 +17,8 @@ class PagesController < ApplicationController
   # Specifies endpoint for connecting to the Microsoft Graph
   GRAPH_RESOURCE = 'https://graph.microsoft.com'.freeze
   SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail'.freeze
-  CONTENT_TYPE = 'application/json;odata.metadata=minimal;odata.streaming=true'.freeze
+  CONTENT_TYPE =
+    'application/json;odata.metadata=minimal;odata.streaming=true'.freeze
 
   # Delegates the browser to the v2 authentication OmniAuth module
   # which takes the user to a sign-in page, if we don't have tokens already

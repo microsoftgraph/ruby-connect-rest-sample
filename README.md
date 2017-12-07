@@ -66,7 +66,7 @@ Register an app on the Microsoft App Registration Portal. This generates the app
 4. To start the Rails application, type the following command.
 
 	```
-	rackup -p 3000
+	rails server --port=3000
 	```
 5. Go to ```http://localhost:3000``` in your web browser.
 
