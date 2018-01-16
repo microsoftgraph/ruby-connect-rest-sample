@@ -66,7 +66,7 @@ Microsoft アプリ登録ポータルでアプリを登録します。これに�
 4. Rails アプリケーションを起動するには、次のコマンドを入力します。
 
     ```
-    rackup -p 3000
+    rails server --port=3000
     ```
 5. Web ブラウザーで ```http://localhost:3000``` にアクセスします。
 

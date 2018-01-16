@@ -66,7 +66,7 @@ Inscrivez une application sur le portail d’inscription des applications Micros
 4. Pour démarrer l’application Rails, entrez la commande suivante.
 
     ```
-    rackup -p 3000
+    rails server --port=3000
     ```
 5. Accédez à ```http://localhost:3000``` dans votre navigateur web.
 
