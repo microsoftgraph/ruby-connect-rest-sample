@@ -66,7 +66,7 @@ Registre um aplicativo no Portal de Registro de Aplicativos da Microsoft. Isso g
 4. Para iniciar o aplicativo Rails, digite o seguinte comando.
 
     ```
-    rackup -p 3000
+    rails server --port=3000
     ```
 5. Acesse ```http://localhost:3000``` no navegador da Web.
 

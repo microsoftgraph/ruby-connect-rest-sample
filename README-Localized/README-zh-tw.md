@@ -66,7 +66,7 @@
 4. 若要啟動 Rails 應用程式，請輸入下列命令。
 
     ```
-    rackup -p 3000
+    rails server --port=3000
     ```
 5. 在網頁瀏覽器中前往 ```http://localhost:3000```。
 
