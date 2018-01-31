@@ -1,0 +1,20 @@
+### YamlMime:Sample
+sample:
+- name: Microsoft Graph Ruby on Rails Connect Sample
+  path: ''
+  description: Use Microsoft Graph to access a user’s Microsoft account resources from within a Ruby on Rails web application. This sample uses REST calls directly to the Microsoft Graph endpoint to work with user resources--in this case, to send an email as the user.
+  readme: ''
+  generateZip: FALSE
+  isLive: TRUE
+  technologies:
+  - Microsoft Graph
+  - Azure AD
+  azureDeploy: ''
+  author: jamescro
+  platforms: []
+  languages:
+  - Ruby
+  extensions:
+    products:
+    - Office 365
+    scenarios: []
