@@ -7,7 +7,7 @@ gem 'rails', '5.2.0'
 gem 'rack', '2.0.5'
 # Use sqlite3 as the database for Active Record
 # 2.5 compatible version isn't released yet, so point to GitHub
-gem 'sqlite3', git: "https://github.com/sparklemotion/sqlite3-ruby"
+gem 'sqlite3', git: 'https://github.com/sparklemotion/sqlite3-ruby'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '5'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -20,7 +20,7 @@ group :development, :test do
 
   gem 'listen', '>= 3.0.5', '< 3.2'
 
-  gem 'rubocop', '0.50.0', require: false
+  gem 'rubocop', '0.57.0', require: false
 
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
