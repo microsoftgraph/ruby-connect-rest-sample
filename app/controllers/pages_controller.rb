@@ -125,6 +125,7 @@ class PagesController < ApplicationController
     else
       @mail_sent = false
       flash[:httpError] = "#{response.code} - #{response.message}"
+      logger.debug response.body
     end
 
     render 'callback'
