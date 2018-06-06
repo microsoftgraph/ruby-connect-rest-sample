@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
-ruby '2.4.2'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.4'
+gem 'rails', '5.2.0'
 # Use a legacy version of Rack which supports Ruby 2.1.9
-gem 'rack', '2.0.3'
+gem 'rack', '2.0.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# 2.5 compatible version isn't released yet, so point to GitHub
+gem 'sqlite3', git: "https://github.com/sparklemotion/sqlite3-ruby"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '5'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -31,8 +32,11 @@ group :development, :test do
 end
 
 # Authentication resources
-omniauth_src = 'git://github.com/cbales/omniauth-microsoft_graph'
+omniauth_src = 'https://github.com/cbales/omniauth-microsoft_graph'
 gem 'omniauth-microsoft_v2_auth', git: omniauth_src
 
 # On Windows systems we need tzinfo-data
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+# Monitor for changes on Windows systems
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
