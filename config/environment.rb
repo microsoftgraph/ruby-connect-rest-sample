@@ -9,8 +9,8 @@ ENV['OAUTH_SCOPE'] =
   'openid ' \
   'email ' \
   'profile ' \
-  'https://graph.microsoft.com/User.Read ' \
-  'https://graph.microsoft.com/Mail.Send'
+  'User.Read ' \
+  'Mail.Send'
 
 # Initialize the Rails application.
 Rails.application.initialize!
