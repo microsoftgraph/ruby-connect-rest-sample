@@ -1,6 +1,10 @@
-﻿## Microsoft Graph Ruby on Rails Connect Sample
+## Microsoft Graph Ruby on Rails Connect Sample
+ 
+## IMPORTANT
 
-[![Build Status](https://api.travis-ci.org/microsoftgraph/ruby-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/ruby-connect-rest-sample)
+**This project is being archived and replaced with the [Build Ruby on Rails apps with Microsoft Graph](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp). As part of the archival process, we're closing all open issues and pull requests.**
+
+**You can continue to use this sample "as-is", but it won't be maintained moving forward. We apologize for any inconvenience.**
 
 Use Microsoft Graph to access a user’s Microsoft account resources from within a Ruby on Rails web application. This sample uses REST calls directly to the Microsoft Graph endpoint to work with user resources--in this case, to send an email as the user.
 
