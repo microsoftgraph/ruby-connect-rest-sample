@@ -1,4 +1,4 @@
-## Microsoft Graph Ruby on Rails Connect Sample
+## [ARCHIVED] Microsoft Graph Ruby on Rails Connect Sample
  
 ## IMPORTANT
 
